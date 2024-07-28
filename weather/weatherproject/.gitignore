@@ -1,22 +1,41 @@
-# Ignore all files in the parent directory
-../*
+# Ignore all .config and .cache files
+../../.config/*
+../../.cache/*
+../../.local/*
 
-# Allow the project directory
-!../weatherproject/**
+# Ignore specific folders or files within .config
+!../../.config/Code/User/globalStorage/
 
-# Ignore system files and logs
+# Ignore VSCode logs and cache
+../../.config/Code/Cache/
+../../.config/Code/Crashpad/
+../../.config/Code/DawnCache/
+../../.config/Code/GPUCache/
+../../.config/Code/logs/
+
+# Ignore Google Chrome data
+../../.config/google-chrome/
+
+# Ignore snap-related data
+../../snap/
+
+# Ignore specific desktop files
+../../Desktop/
+
+# Ignore other unrelated project folders
+../../recipe project
+../../submittask/task
+
+# Ignore Yelp data
+../../.config/yelp/
+../../.local/share/yelp/
+
+# Ignore indexedDB files for WhatsApp
+../../snap/whatsapp-for-linux/
+
+# Ignore Git-specific files
 *.log
-*.pma
+*.sqlite3-shm
+*.sqlite3-wal
 *.ldb
-*.sqlite3-*
-*.db
-*.db-journal
-.cache/
-.config/
-.local/
-.snap/
-
-# Ignore Chrome and VS Code cache and configuration
-.config/google-chrome/
-.config/Code/
-.snap/whatsapp-for-linux/
+*.pma
