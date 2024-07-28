@@ -1,0 +1,22 @@
+# Ignore all files in the parent directory
+../*
+
+# Allow the project directory
+!../weatherproject/**
+
+# Ignore system files and logs
+*.log
+*.pma
+*.ldb
+*.sqlite3-*
+*.db
+*.db-journal
+.cache/
+.config/
+.local/
+.snap/
+
+# Ignore Chrome and VS Code cache and configuration
+.config/google-chrome/
+.config/Code/
+.snap/whatsapp-for-linux/

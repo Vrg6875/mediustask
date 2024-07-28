@@ -3,7 +3,7 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///" added="2024-07-22T17:00:14.549295Z" modified="2024-07-28T06:31:56.031663Z" visited="2024-07-22T17:00:14.549295Z">
+  <bookmark href="file:///" added="2024-07-22T17:00:14.549295Z" modified="2024-07-28T07:13:07.381500Z" visited="2024-07-22T17:00:14.549295Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="inode/directory"/>
@@ -11,7 +11,7 @@
           <bookmark:group>baobab</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="baobab" exec="&apos;baobab %u&apos;" modified="2024-07-28T06:31:56.031661Z" count="2"/>
+          <bookmark:application name="baobab" exec="&apos;baobab %u&apos;" modified="2024-07-28T07:13:07.381495Z" count="3"/>
         </bookmark:applications>
       </metadata>
     </info>

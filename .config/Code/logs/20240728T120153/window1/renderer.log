@@ -6,3 +6,5 @@
 (Use `exe --trace-warnings ...` to show where the warning was created)
 2024-07-28 12:02:06.152 [error] [File Watcher (parcel)] Unexpected error: inotify_add_watch on '/home/vicky/.config/Code/logs/20240722T233635' failed: No such file or directory (EUNKNOWN) (path: /home/vicky)
 2024-07-28 12:02:06.152 [error] [File Watcher (universal)] restarting watcher after error: inotify_add_watch on '/home/vicky/.config/Code/logs/20240722T233635' failed: No such file or directory
+2024-07-28 12:39:57.383 [error] [uncaught exception in main]: SQLITE_ERROR: cannot commit - no transaction is active: Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:41:40.040 [error] [uncaught exception in main]: SQLITE_ERROR: cannot commit - no transaction is active: Error: SQLITE_ERROR: cannot commit - no transaction is active

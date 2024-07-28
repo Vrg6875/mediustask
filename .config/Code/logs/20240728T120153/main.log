@@ -2,3 +2,15 @@
 2024-07-28 12:02:06.152 [warning] [UtilityProcessWorker]: createWorker() found an existing worker that will be terminated (window: 1, moduleId: vs/platform/files/node/watcher/watcherMain)
 2024-07-28 12:02:23.832 [info] update#setState checking for updates
 2024-07-28 12:02:23.845 [info] update#setState available for download
+2024-07-28 12:39:57.332 [error] [storage state.vscdb] prepare(): Error: SQLITE_FULL: database or disk is full (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4730
+2024-07-28 12:39:57.335 [error] [storage state.vscdb] transaction(): Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:39:57.336 [error] [uncaught exception in main]: Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:39:57.337 [error] Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:39:57.337 [error] [uncaught exception in main]: Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:39:57.337 [error] Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:41:40.038 [error] [storage state.vscdb] prepare(): Error: SQLITE_FULL: database or disk is full (INSERT INTO ItemTable VALUES (?,?),(?,?)). Details: Keys: terminal.history.entries.commands, terminal.history.timestamp.commands Length: 4771
+2024-07-28 12:41:40.038 [error] [storage state.vscdb] transaction(): Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:41:40.039 [error] [uncaught exception in main]: Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:41:40.039 [error] Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:41:40.039 [error] [uncaught exception in main]: Error: SQLITE_ERROR: cannot commit - no transaction is active
+2024-07-28 12:41:40.039 [error] Error: SQLITE_ERROR: cannot commit - no transaction is active
