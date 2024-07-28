@@ -7,13 +7,13 @@
     <application id="anydesk.desktop" score="439.1690673828125" last-seen="1721754792"/>
     <application id="gnome-control-center.desktop" score="1.3304672241211009" last-seen="1721754964"/>
     <application id="apport-gtk.desktop" score="0.5" last-seen="1721670671"/>
-    <application id="org.gnome.Nautilus.desktop" score="2354.8299522403395" last-seen="1722148514"/>
+    <application id="org.gnome.Nautilus.desktop" score="2355.8299522403395" last-seen="1722149763"/>
     <application id="xdg-desktop-portal-gnome.desktop" score="0" last-seen="1721578631"/>
     <application id="pgadmin4.desktop" score="15.75" last-seen="1721985509"/>
-    <application id="org.gnome.Terminal.desktop" score="383477457.87631226" last-seen="1722148313"/>
+    <application id="org.gnome.Terminal.desktop" score="383477457.87631226" last-seen="1722149835"/>
     <application id="firefox_firefox.desktop" score="0.875" last-seen="1721671421"/>
     <application id="org.gnome.baobab.desktop" score="4" last-seen="1722148350"/>
     <application id="thunderbird.desktop" score="0.25" last-seen="1721995848"/>
-    <application id="code.desktop" score="537.09738680825501" last-seen="1722149648"/>
+    <application id="code.desktop" score="590.09738680825501" last-seen="1722150045"/>
   </context>
 </application-state>
