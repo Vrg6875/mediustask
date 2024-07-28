@@ -1,0 +1,41 @@
+2024-07-28 12:26:11.288 [info] Experiment 'pythonCreateEnvOnPipInstall' is active
+2024-07-28 12:26:11.288 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-07-28 12:26:11.288 [info] Experiment 'pythonTerminalEnvVarActivation' is active
+2024-07-28 12:26:11.288 [info] Experiment 'pythonTestAdapter' is active
+2024-07-28 12:26:11.288 [error] Reading directory to watch failed [Error: ENOENT: no such file or directory, scandir '/home/vicky/Desktop/eventplanner/vicky/.pixi/envs'
+	at Object.readdirSync (node:fs:1529:3)
+	at t.readdirSync (node:electron/js2c/node_init:2:11289)
+	at /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:574598
+	at /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:574789
+	at Array.map (<anonymous>)
+	at d.initWatchers (/home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:574507)
+	at async d.ensureWatchersReady (/home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:536827)] {
+  errno: -2,
+  syscall: 'scandir',
+  code: 'ENOENT',
+  path: '/home/vicky/Desktop/eventplanner/vicky/.pixi/envs'
+}
+2024-07-28 12:26:11.288 [error] Dir "/home/vicky/Desktop/eventplanner/vicky/.pixi/envs" is not watchable (directory does not exist)
+2024-07-28 12:26:11.288 [info] Default formatter is set to null for workspace /home/vicky/Desktop/eventplanner/vicky
+2024-07-28 12:26:11.288 [info] Python interpreter path: ./venv/bin/python
+2024-07-28 12:26:11.420 [info] > pyenv which python
+2024-07-28 12:26:11.420 [info] cwd: .
+2024-07-28 12:26:11.960 [info] > pixi --version
+2024-07-28 12:26:11.961 [error] [Error: spawn pixi ENOENT
+	at ChildProcess._handle.onexit (node:internal/child_process:284:19)
+	at onErrorNT (node:internal/child_process:477:16)
+	at process.processTicksAndRejections (node:internal/process/task_queues:82:21)] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn pixi',
+  path: 'pixi',
+  spawnargs: [ '--version' ]
+}
+2024-07-28 12:26:11.961 [warning] could not find a pixi interpreter for the interpreter at /home/vicky/Desktop/eventplanner/vicky/venv/bin/python
+2024-07-28 12:26:12.666 [info] > /usr/bin/python ~/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/printEnvVariables.py
+2024-07-28 12:26:12.666 [info] shell: bash
+2024-07-28 12:26:12.739 [info] Setting environment variable PWD in collection to /home/vicky/Desktop/eventplanner/vicky {"applyAtShellIntegration":true,"applyAtProcessCreation":true}
+2024-07-28 12:26:12.739 [info] Prepending environment variable PATH in collection with /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/deactivate/bash:/home/vicky/Desktop/eventplanner/vicky/venv/bin: {"applyAtShellIntegration":true,"applyAtProcessCreation":true}
+2024-07-28 12:26:12.739 [info] Prepending environment variable PS1 in collection with (venv)  {"applyAtShellIntegration":true,"applyAtProcessCreation":false}
+2024-07-28 12:26:12.740 [info] Send text to terminal: /usr/bin/python /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/printEnvVariablesToFile.py /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/deactivate/bash/envVars.txt
+2024-07-28 12:26:13.906 [info] Starting Pylance language server.

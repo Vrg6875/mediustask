@@ -1,0 +1,6 @@
+2024/07/19-17:01:04.050 297d Reusing MANIFEST /home/vicky/snap/postman/254/.config/Postman/Partitions/1a4333c6-b79c-48f7-a14c-30ea6e5b6c50/Local Storage/leveldb/MANIFEST-000001
+2024/07/19-17:01:04.051 297d Recovering log #13
+2024/07/19-17:01:04.051 297d Reusing old log /home/vicky/snap/postman/254/.config/Postman/Partitions/1a4333c6-b79c-48f7-a14c-30ea6e5b6c50/Local Storage/leveldb/000013.log 
+2024/07/19-17:02:04.191 29f9 Level-0 table #17: started
+2024/07/19-17:02:04.198 29f9 Level-0 table #17: 14206 bytes OK
+2024/07/19-17:02:04.200 29f9 Delete type=0 #13

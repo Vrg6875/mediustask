@@ -1,0 +1,10 @@
+2024-07-26 19:11:41.328 [info] Started local extension host with pid 3384.
+2024-07-26 19:11:41.967 [error] [sidthesloth.html5-boilerplate]: Unknown language in `contributes.html5-boilerplate.language`. Provided value: njk
+2024-07-26 19:11:41.968 [error] [sidthesloth.html5-boilerplate]: Unknown language in `contributes.html5-boilerplate.language`. Provided value: django-html
+2024-07-26 19:11:43.370 [error] [Extension Host] (node:3384) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `exe --trace-warnings ...` to show where the warning was created)
+2024-07-26 19:11:43.966 [info] [perf] Render performance baseline is 54ms
+2024-07-26 19:11:47.682 [error] XHR failed: Error: XHR failed
+    at y.onerror (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:97:2011)
+2024-07-26 19:11:53.434 [error] [File Watcher (parcel)] Unexpected error: inotify_add_watch on '/home/vicky/.config/Code/logs/20240722T203010/window1/exthost/output_logging_20240722T203012' failed: No such file or directory (EUNKNOWN) (path: /home/vicky)
+2024-07-26 19:11:53.434 [error] [File Watcher (universal)] restarting watcher after error: inotify_add_watch on '/home/vicky/.config/Code/logs/20240722T203010/window1/exthost/output_logging_20240722T203012' failed: No such file or directory

@@ -1,0 +1,55 @@
+{
+  "indentationRules": {
+    "decreaseIndentPattern": "^\\s*(ENDMETHOD|ENDIF|ENDLOOP|ENDCLASS|ENDCASE|ENDDO|ENDFORM|ELSE|ENDWHILE|ENDTRY|CATCH)\\.$",
+    "increaseIndentPattern": "^\\s*(METHOD|IF|LOOP|CLASS|CASE|DO|FORM|ELSE|WHILE|TRY|CATCH).*\\.$"
+  },
+  "comments": {
+    "lineComment": "\""
+  },
+  "brackets": [
+    [
+      "{",
+      "}"
+    ],
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ]
+  ],
+  "autoClosingPairs": [
+    {
+      "open": "<",
+      "close": ">"
+    },
+    {
+      "open": "[",
+      "close": "]"
+    },
+    {
+      "open": "(",
+      "close": ")"
+    }
+  ],
+  "surroundingPairs": [
+    [
+      "<",
+      ">"
+    ],
+    [
+      "|",
+      "|"
+    ],
+    [
+      "'",
+      "'"
+    ],
+    [
+      "`",
+      "`"
+    ]
+  ]
+}

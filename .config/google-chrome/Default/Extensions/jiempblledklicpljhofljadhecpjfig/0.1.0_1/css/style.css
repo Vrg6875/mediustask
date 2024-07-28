@@ -1,0 +1,89 @@
+.FMPlayer.video-js .vjs-control-bar {
+  z-index: 9;
+}
+#cpv-copypaste {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(255, 255, 255, 0.01); /* Black w/ opacity */
+}
+#cpv-loading {
+  z-index: 9999;
+  display: none;
+  position: absolute;
+}
+#cpv-loading-inner {
+  display: inline-block;
+  position: relative;
+}
+#cpv-loading-inner div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+#cpv-loading-inner div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+#cpv-toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  top: 30px;
+  font-size: 17px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+  /* create a white shadow */
+  box-shadow: 2px 2px 5px 0px rgba(255, 255, 255, 0.25);
+}
+
+#cpv-toast.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s ease;
+}

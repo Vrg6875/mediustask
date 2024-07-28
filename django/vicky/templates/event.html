@@ -1,0 +1,84 @@
+{% if messages %}
+<ul class="messages error">
+    {% for message in messages %}
+    <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+
+
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+<style>
+    .messages.error {
+        color: red; /* Set the text color to red */
+        /* Add any other styling you want */
+    }
+    .main{
+        color:red;
+    }
+    .vickyimage {
+        font-family: Arial, sans-serif;
+        background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600');" 
+       
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
+   
+</style>
+</head>
+<body class="vickyimage">
+    
+    <h1 id="event-planner" >Event Planner</h1>
+    <form method="post" action="#" >
+        {% csrf_token %}
+        <div>
+        <label for="event-name">Event Name:</label><br>
+        <input type="text" id="event-name" name="event-name" value={{event_name}}> <br>
+        </div>
+        <div>
+        <label for="event-date">Event Date:</label><br>
+        <input type="date" id="event-date" name="event-date"><br>
+        </div>
+     <div>   
+        <label for="event-time">Event Time:</label><br>
+        <input type="time" id="event-time" name="event-time"><br>
+    </div>
+        <label for="event-location">Event Location:</label><br>
+        <input type="text" id="event-location" name="event-location"><br>
+     <div>   
+        <label for="event-description">Event Description:</label><br>
+        <textarea id="event-description" name="event-description" rows="4" cols="50"></textarea><br>
+     </div>   
+        <label for="guests">Guests (comma-separated):</label><br>
+        <input type="text" id="guests" name="guests"><br>
+    </div>  
+
+        <div>
+        <label for="event-category">Event Category:</label><br>
+        <select id="event-category" name="event-category">
+            <option value="meeting">Meeting</option>
+            <option value="party">Party</option>
+            <option value="appointment">Appointment</option>
+            <option value="festival">festival</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br><br>
+    </div>
+    
+    <h3 class="main">Check the Available date and time</h3><a href="/vacant/"><h3>click</h3></a></p>
+
+        <input type="submit" value="Create Event">
+        
+
+    </form>
+</body>
+</html>

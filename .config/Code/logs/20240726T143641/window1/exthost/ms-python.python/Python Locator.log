@@ -1,0 +1,22 @@
+2024-07-26 14:37:12.482 [info] Starting Python Locator /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python-env-tools/bin/pet server
+2024-07-26 14:37:12.482 [info] Started Refreshing Environments
+2024-07-26 14:37:12.482 [info] Discovered env: /home/vicky/.local/share/virtualenvs/Django-Ecommerce-hiiekVe3/bin/python
+2024-07-26 14:37:12.482 [info] Discovered env: /usr/bin/python
+2024-07-26 14:37:12.482 [info] Discovered env: /bin/python
+2024-07-26 14:37:12.715 [warning] Unknown Env ("/snap/bin/python38") in Path resolved as ResolvedPythonEnv { executable: "/snap/python38/22/usr/bin/python3.8", prefix: "/snap/python38/22/usr", version: "3.8.0.final.0", is64_bit: true, symlink: Some(["/snap/bin/python38"]) } and reported as GlobalPaths
+2024-07-26 14:37:12.715 [info] Discovered env: /snap/python38/22/usr/bin/python3.8
+2024-07-26 14:37:12.716 [warning] Unknown Env ("/snap/bin/python38") in Path resolved as ResolvedPythonEnv { executable: "/snap/python38/22/usr/bin/python3.8", prefix: "/snap/python38/22/usr", version: "3.8.0.final.0", is64_bit: true, symlink: Some(["/snap/bin/python38"]) } and reported as GlobalPaths
+2024-07-26 14:37:13.091 [info] Locator Conda took 76.428909ms
+2024-07-26 14:37:13.094 [info] Locator Homebrew took 422.258µs
+2024-07-26 14:37:13.100 [info] Locator LinuxGlobalPython took 148.465405ms
+2024-07-26 14:37:13.102 [info] Locator PipEnv took 208ns
+2024-07-26 14:37:13.103 [info] Locator Poetry took 79.552µs
+2024-07-26 14:37:13.104 [info] Locator PyEnv took 323.768µs
+2024-07-26 14:37:13.104 [info] Locator Venv took 254ns
+2024-07-26 14:37:13.120 [info] Locator VirtualEnv took 276ns
+2024-07-26 14:37:13.121 [info] Locator VirtualEnvWrapper took 5.198µs
+2024-07-26 14:37:13.122 [info] Environments found using locators in 149.898713ms
+2024-07-26 14:37:13.128 [info] Environments in PATH found in 475.896656ms
+2024-07-26 14:37:13.129 [info] Environments in global virtual env paths found in 49.075649ms
+2024-07-26 14:37:13.129 [info] Environments in custom search paths found in 961.162µs
+2024-07-26 14:37:13.129 [info] Refresh completed in 476ms

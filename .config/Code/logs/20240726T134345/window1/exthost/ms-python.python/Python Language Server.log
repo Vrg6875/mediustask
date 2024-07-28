@@ -1,0 +1,34 @@
+2024-07-26 13:43:50.230 [info] (Client) Pylance async client (2024.7.1) started with python extension (2024.10.0)
+2024-07-26 13:43:51.202 [info] [Info  - 13:43:51] (3597) Pylance language server 2024.7.1 (pyright version 1.1.369, commit 1168be71) starting
+2024-07-26 13:43:51.203 [info] [Info  - 13:43:51] (3597) Server root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-26 13:43:51.204 [info] [Info  - 13:43:51] (3597) Starting service instance "vicky"
+2024-07-26 13:43:51.262 [info] [Info  - 13:43:51] (3597) Setting pythonPath for service "vicky": "/usr/bin/python"
+2024-07-26 13:43:51.262 [info] [Info  - 13:43:51] (3597) Setting environmentName for service "vicky": "3.10.12 (global)"
+2024-07-26 13:43:51.263 [info] [Info  - 13:43:51] (3597) No include entries specified; assuming /home/vicky/Desktop/eventplanner/vicky
+2024-07-26 13:43:51.264 [info] [Info  - 13:43:51] (3597) Auto-excluding **/node_modules
+2024-07-26 13:43:51.264 [info] [Info  - 13:43:51] (3597) Auto-excluding **/__pycache__
+2024-07-26 13:43:51.265 [info] [Info  - 13:43:51] (3597) Auto-excluding **/.*
+2024-07-26 13:43:51.296 [info] [Info  - 13:43:51] (3597) Assuming Python version 3.10.12.final.0
+2024-07-26 13:43:51.449 [info] [Info  - 13:43:51] (3597) Found 23 source files
+2024-07-26 13:43:52.101 [info] [Info  - 13:43:52] (3597) Background analysis(1) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-26 13:43:52.104 [info] [Info  - 13:43:52] (3597) Background analysis(1) started
+2024-07-26 13:43:52.427 [info] [Info  - 13:43:52] (3597) Indexer background runner(2) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (index)
+2024-07-26 13:43:52.427 [info] [Info  - 13:43:52] (3597) Indexing(2) started
+2024-07-26 13:43:53.195 [info] [Info  - 13:43:53] (3597) scanned(2) 109 files over 1 exec env
+2024-07-26 13:43:53.464 [info] [Info  - 13:43:53] (3597) indexed(2) 55 files over 1 exec env
+2024-07-26 13:43:53.504 [info] [Info  - 13:43:53] (3597) Indexing finished(2).
+2024-07-26 13:51:07.555 [info] [Info  - 13:51:07] (3597) Indexer background runner(3) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (refresh)
+2024-07-26 13:51:07.555 [info] [Info  - 13:51:07] (3597) Indexing(3) started
+2024-07-26 13:51:07.944 [info] [Info  - 13:51:07] (3597) scanned(3) 109 files over 1 exec env
+2024-07-26 13:51:08.179 [info] [Info  - 13:51:08] (3597) indexed(3) 55 files over 1 exec env
+2024-07-26 13:51:08.219 [info] [Info  - 13:51:08] (3597) Indexing finished(3).
+2024-07-26 13:51:24.732 [info] [Info  - 13:51:24] (3597) Indexer background runner(4) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (refresh)
+2024-07-26 13:51:24.732 [info] [Info  - 13:51:24] (3597) Indexing(4) started
+2024-07-26 13:51:25.113 [info] [Info  - 13:51:25] (3597) scanned(4) 129 files over 1 exec env
+2024-07-26 13:51:25.339 [info] [Info  - 13:51:25] (3597) indexed(4) 74 files over 1 exec env
+2024-07-26 13:51:25.379 [info] [Info  - 13:51:25] (3597) Indexing finished(4).
+2024-07-26 13:53:34.742 [info] [Info  - 13:53:34] (3597) Indexer background runner(5) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (refresh)
+2024-07-26 13:53:34.743 [info] [Info  - 13:53:34] (3597) Indexing(5) started
+2024-07-26 13:53:35.161 [info] [Info  - 13:53:35] (3597) scanned(5) 130 files over 1 exec env
+2024-07-26 13:53:35.382 [info] [Info  - 13:53:35] (3597) indexed(5) 75 files over 1 exec env
+2024-07-26 13:53:35.424 [info] [Info  - 13:53:35] (3597) Indexing finished(5).

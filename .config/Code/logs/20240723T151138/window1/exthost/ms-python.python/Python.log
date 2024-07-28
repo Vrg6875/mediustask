@@ -1,0 +1,46 @@
+2024-07-23 15:11:41.345 [info] Experiment 'pythonCreateEnvOnPipInstall' is active
+2024-07-23 15:11:41.345 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-07-23 15:11:41.345 [info] Experiment 'pythonTerminalEnvVarActivation' is active
+2024-07-23 15:11:41.345 [info] Experiment 'pythonTestAdapter' is active
+2024-07-23 15:11:41.345 [error] Reading directory to watch failed [Error: ENOENT: no such file or directory, scandir '/home/vicky/Desktop/eventplanner/vicky/.pixi/envs'
+	at Object.readdirSync (node:fs:1529:3)
+	at t.readdirSync (node:electron/js2c/node_init:2:11289)
+	at /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:574598
+	at /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:574789
+	at Array.map (<anonymous>)
+	at d.initWatchers (/home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:574507)
+	at async d.ensureWatchersReady (/home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/out/client/extension.js:2:536827)] {
+  errno: -2,
+  syscall: 'scandir',
+  code: 'ENOENT',
+  path: '/home/vicky/Desktop/eventplanner/vicky/.pixi/envs'
+}
+2024-07-23 15:11:41.345 [error] Dir "/home/vicky/Desktop/eventplanner/vicky/.pixi/envs" is not watchable (directory does not exist)
+2024-07-23 15:11:41.345 [info] Default formatter is set to null for workspace /home/vicky/Desktop/eventplanner/vicky
+2024-07-23 15:11:41.345 [info] Starting Environment refresh
+2024-07-23 15:11:41.345 [info] > pixi --version
+2024-07-23 15:11:41.345 [error] [Error: spawn pixi ENOENT
+	at ChildProcess._handle.onexit (node:internal/child_process:284:19)
+	at onErrorNT (node:internal/child_process:477:16)
+	at process.processTicksAndRejections (node:internal/process/task_queues:82:21)] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn pixi',
+  path: 'pixi',
+  spawnargs: [ '--version' ]
+}
+2024-07-23 15:11:41.345 [info] > hatch env show --json
+2024-07-23 15:11:41.345 [info] cwd: .
+2024-07-23 15:11:41.345 [info] Python interpreter path: /usr/bin/python
+2024-07-23 15:11:41.353 [info] > pyenv which python
+2024-07-23 15:11:41.353 [info] cwd: .
+2024-07-23 15:11:41.403 [warning] could not find a pixi interpreter for the interpreter at /usr/bin/python
+2024-07-23 15:11:41.753 [info] > /usr/bin/python -I ~/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/interpreterInfo.py
+2024-07-23 15:11:41.754 [info] Environments refresh paths discovered: 775 milliseconds
+2024-07-23 15:11:41.858 [info] Environments refresh finished (event): 879 milliseconds
+2024-07-23 15:11:41.862 [info] Environment refresh took 883 milliseconds
+2024-07-23 15:11:43.177 [info] Starting Pylance language server.
+2024-07-23 15:17:08.618 [info] Discover tests for workspace name: vicky - uri: /home/vicky/Desktop/eventplanner/vicky/vicky/settings.py
+2024-07-23 15:21:15.871 [info] Discover tests for workspace name: vicky - uri: /home/vicky/Desktop/eventplanner/vicky/vicky/settings.py
+2024-07-23 15:28:19.478 [info] Discover tests for workspace name: vicky - uri: /home/vicky/Desktop/eventplanner/vicky/vicky/settings.py
+2024-07-23 15:30:50.982 [info] Discover tests for workspace name: vicky - uri: /home/vicky/Desktop/eventplanner/vicky/vicky/settings.py

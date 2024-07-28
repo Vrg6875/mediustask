@@ -1,0 +1,23 @@
+2024-07-26 16:37:43.636 [info] Starting Python Locator /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python-env-tools/bin/pet server
+2024-07-26 16:37:43.638 [info] Started Refreshing Environments
+2024-07-26 16:37:43.638 [info] Discovered env: /home/vicky/Desktop/eventplanner/vicky/venv/bin/python
+2024-07-26 16:37:43.639 [info] Discovered env: /home/vicky/.local/share/virtualenvs/Django-Ecommerce-hiiekVe3/bin/python
+2024-07-26 16:37:43.639 [info] Discovered env: /usr/bin/python
+2024-07-26 16:37:43.639 [info] Discovered env: /bin/python
+2024-07-26 16:37:43.639 [warning] Unknown Env ("/snap/bin/python38") in Path resolved as ResolvedPythonEnv { executable: "/snap/python38/22/usr/bin/python3.8", prefix: "/snap/python38/22/usr", version: "3.8.0.final.0", is64_bit: true, symlink: Some(["/snap/bin/python38"]) } and reported as GlobalPaths
+2024-07-26 16:37:43.640 [info] Discovered env: /snap/python38/22/usr/bin/python3.8
+2024-07-26 16:37:43.642 [warning] Unknown Env ("/snap/bin/python38") in Path resolved as ResolvedPythonEnv { executable: "/snap/python38/22/usr/bin/python3.8", prefix: "/snap/python38/22/usr", version: "3.8.0.final.0", is64_bit: true, symlink: Some(["/snap/bin/python38"]) } and reported as GlobalPaths
+2024-07-26 16:37:43.693 [info] Locator Conda took 39.817321ms
+2024-07-26 16:37:43.693 [info] Locator Homebrew took 57.337µs
+2024-07-26 16:37:43.693 [info] Locator LinuxGlobalPython took 128.558854ms
+2024-07-26 16:37:43.694 [info] Locator PipEnv took 4.814µs
+2024-07-26 16:37:43.694 [info] Locator Poetry took 89.98µs
+2024-07-26 16:37:43.695 [info] Locator PyEnv took 54.643µs
+2024-07-26 16:37:43.696 [info] Locator Venv took 483ns
+2024-07-26 16:37:43.696 [info] Locator VirtualEnv took 390ns
+2024-07-26 16:37:43.696 [info] Locator VirtualEnvWrapper took 78ns
+2024-07-26 16:37:43.696 [info] Environments found using locators in 128.868499ms
+2024-07-26 16:37:43.697 [info] Environments in PATH found in 438.795555ms
+2024-07-26 16:37:43.699 [info] Environments in global virtual env paths found in 31.966632ms
+2024-07-26 16:37:43.699 [info] Environments in custom search paths found in 32.680548ms
+2024-07-26 16:37:43.701 [info] Refresh completed in 448ms

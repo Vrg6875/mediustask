@@ -1,0 +1,32 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/ClipWords-128.png",
+         "16": "images/ClipWords-16.png",
+         "32": "images/ClipWords-32.png",
+         "48": "images/ClipWords-48.png"
+      }
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "css": [ "css/style.css" ],
+      "js": [ "scripts/tesseract.min.js" ],
+      "matches": [ "*://*/*" ]
+   } ],
+   "description": "A browser extension to copy code and other text from videos.",
+   "differential_fingerprint": "1.d21f84c1101cf5c9a616e04860926297ba3225276fcdfa421b57455b8f5d38a3",
+   "icons": {
+      "128": "images/ClipWords-128.png",
+      "16": "images/ClipWords-16.png",
+      "32": "images/ClipWords-32.png",
+      "48": "images/ClipWords-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmstSIJQWJ0RF2oqJAHSJvDQo95WQp1jaq85eSQ5RKN+6N4m8C7kPhhervzy/S1kAg1Utd3s2k1Vo6NXKTKsz315vIquyqRWbbA7tz/q/t8dd33U13hNpcBaLRBFN5I8wFqRvGpZVcgHj22733v2mQdRfPn7WQyr2X40eYcp/+kmYEQTt9SB0DABdBQ9ipjl329HAMaap4tXtbLA09OtjOIlR6E9u7R5A7GWYXyLxwgYINlQi6qJRuuxu5NSkU9780gNxwAMjC1LxPl56vnxdTmNvyuKpABR4uvX+bLkM+YaT3LdN5xJkbeHeb5bvgzE0GVXQn4vJD0yyxijNKTrXiQIDAQAB",
+   "manifest_version": 3,
+   "name": "ClipWords – Copy & Paste Text from Video",
+   "permissions": [ "activeTab", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1.0"
+}

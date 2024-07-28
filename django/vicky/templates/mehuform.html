@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form</title>
+</head>
+<body>
+
+<h1>mehu da form</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+       {{form}}
+    <br>  
+    <div>
+       
+        <input type="submit" value="save" >
+    </div>   
+    <br>
+    <div>
+        output:<input type="text" value={{output}}>
+    </div>    
+</form>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+2024-07-26 14:36:41.955 [info] Started local extension host with pid 30988.
+2024-07-26 14:36:42.700 [error] [sidthesloth.html5-boilerplate]: Unknown language in `contributes.html5-boilerplate.language`. Provided value: njk
+2024-07-26 14:36:42.700 [error] [sidthesloth.html5-boilerplate]: Unknown language in `contributes.html5-boilerplate.language`. Provided value: django-html
+2024-07-26 14:36:44.094 [error] [Extension Host] (node:30988) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `exe --trace-warnings ...` to show where the warning was created)
+2024-07-26 14:36:44.598 [info] [perf] Render performance baseline is 31ms

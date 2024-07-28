@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>crime</title>
+</head>
+<body>
+ 
+<table border="2">
+    <tr>
+        <th>icon</th>
+        <th>descrption</th>
+
+    </tr>
+    {% for i in crimedata %}
+    <tr>
+        <td>{{ i.icon }}</td>
+       
+        <td>{{ i.des }}</td>
+        <td>{{i.name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+    
+</body>
+</html>

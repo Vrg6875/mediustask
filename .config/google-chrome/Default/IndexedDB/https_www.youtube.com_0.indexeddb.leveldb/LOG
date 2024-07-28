@@ -1,0 +1,5 @@
+2024/07/23-14:11:41.564 2bca1 Creating DB /home/vicky/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb since it was missing.
+2024/07/23-14:11:41.578 2bca1 Reusing MANIFEST /home/vicky/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/23-14:27:08.874 2bca0 Level-0 table #5: started
+2024/07/23-14:27:08.889 2bca0 Level-0 table #5: 1117563 bytes OK
+2024/07/23-14:27:08.896 2bca0 Delete type=0 #3

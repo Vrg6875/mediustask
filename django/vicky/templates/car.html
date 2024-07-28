@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form</title>
+</head>
+<body>
+
+<h1>usersform</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+    
+    <div>
+        <label>brand name</label>
+    </div>   
+    <br>
+    <div>
+        <select name="name">
+            <option value="tata">tata</option>    
+            <option value="kia"> kia</option> 
+            <option value="renault"> renault</option> 
+            
+        </select>
+    <div>
+        <label>car color</label>
+        <select name="color">
+            <option value="red"> red</option>    
+            <option value="black">black</option> 
+            <option value="grey"> grey</option> 
+            
+        </select>
+       
+
+    </div> 
+    <br>  
+    <div>
+       
+        <input type="submit" value="search car" >
+    </div>   
+    <br>
+    <div>
+        output:<input type="text" value={{out}}>
+    </div>    
+</form>
+
+</body>
+</html>

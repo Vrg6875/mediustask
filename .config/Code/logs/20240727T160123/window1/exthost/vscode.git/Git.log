@@ -1,0 +1,20 @@
+2024-07-27 16:01:32.519 [info] Log level: Info
+2024-07-27 16:01:32.519 [info] Validating found git in: "git"
+2024-07-27 16:01:32.519 [info] Using git "2.34.1" from "git"
+2024-07-27 16:01:32.521 [info] > git rev-parse --show-toplevel [4ms]
+2024-07-27 16:01:32.529 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-07-27 16:01:32.540 [info] Open repository: /home/vicky
+2024-07-27 16:01:32.554 [info] > git config --get commit.template [3ms]
+2024-07-27 16:01:32.589 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [28ms]
+2024-07-27 16:01:32.613 [info] > git fetch [73ms]
+2024-07-27 16:01:32.613 [info] fatal: unable to access 'https://github.com/Vrg6875/newvrg/': Could not resolve host: github.com
+2024-07-27 16:01:32.628 [info] > git status -z -uall [29ms] (cancelled)
+2024-07-27 16:01:32.629 [info] > git config --get commit.template [8ms]
+2024-07-27 16:01:32.644 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [9ms]
+2024-07-27 16:01:32.644 [info] > git config --get commit.template [16ms]
+2024-07-27 16:01:32.672 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [30ms]
+2024-07-27 16:01:33.051 [info] > git check-ignore -v -z --stdin [3ms]
+2024-07-27 16:01:35.095 [info] > git status -z -uall [2415ms] (cancelled)
+2024-07-27 16:01:37.588 [info] > git show --textconv :python list/test.py [109ms]
+2024-07-27 16:01:37.588 [info] > git check-ignore -v -z --stdin [40ms]
+2024-07-27 16:01:37.589 [info] > git ls-files --stage -- /home/vicky/python list/test.py [105ms]

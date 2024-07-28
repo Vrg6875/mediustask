@@ -1,0 +1,12 @@
+2024/07/19-17:01:06.391 2a5c Reusing MANIFEST /home/vicky/snap/postman/254/.config/Postman/Partitions/1a4333c6-b79c-48f7-a14c-30ea6e5b6c50/IndexedDB/https_desktop.postman.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/19-17:01:06.391 2a5c Recovering log #13
+2024/07/19-17:01:06.412 2a5c Reusing old log /home/vicky/snap/postman/254/.config/Postman/Partitions/1a4333c6-b79c-48f7-a14c-30ea6e5b6c50/IndexedDB/https_desktop.postman.com_0.indexeddb.leveldb/000013.log 
+2024/07/19-17:35:19.509 411a Level-0 table #19: started
+2024/07/19-17:35:19.543 411a Level-0 table #19: 1555182 bytes OK
+2024/07/19-17:35:19.546 411a Delete type=0 #13
+2024/07/19-17:35:23.025 3e24 Compacting 1@1 + 1@2 files
+2024/07/19-17:35:23.034 3e24 Generated table #20@1: 926 keys, 67554 bytes
+2024/07/19-17:35:23.034 3e24 Compacted 1@1 + 1@2 files => 67554 bytes
+2024/07/19-17:35:23.035 3e24 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/07/19-17:35:23.036 3e24 Delete type=2 #16
+2024/07/19-17:35:23.036 3e24 Delete type=2 #19

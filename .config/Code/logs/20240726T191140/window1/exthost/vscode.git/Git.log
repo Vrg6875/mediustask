@@ -1,0 +1,23 @@
+2024-07-26 19:11:47.553 [info] Log level: Info
+2024-07-26 19:11:47.553 [info] Validating found git in: "git"
+2024-07-26 19:11:47.553 [info] Using git "2.34.1" from "git"
+2024-07-26 19:11:47.553 [info] > git rev-parse --show-toplevel [5ms]
+2024-07-26 19:11:47.553 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2024-07-26 19:11:47.553 [info] Open repository: /home/vicky
+2024-07-26 19:11:47.554 [info] > git config --get commit.template [11ms]
+2024-07-26 19:11:47.566 [info] > git rev-parse --show-toplevel [16ms]
+2024-07-26 19:11:47.577 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [15ms]
+2024-07-26 19:11:47.589 [info] > git fetch [55ms]
+2024-07-26 19:11:47.589 [info] fatal: unable to access 'https://github.com/Vrg6875/newvrg/': Could not resolve host: github.com
+2024-07-26 19:11:47.592 [info] > git rev-parse --show-toplevel [16ms]
+2024-07-26 19:11:47.608 [info] > git status -z -uall [21ms] (cancelled)
+2024-07-26 19:11:47.610 [info] > git config --get commit.template [7ms]
+2024-07-26 19:11:47.610 [info] > git config --get commit.template [13ms]
+2024-07-26 19:11:47.633 [info] > git rev-parse --show-toplevel [25ms]
+2024-07-26 19:11:47.667 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2024-07-26 19:11:47.668 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [15ms]
+2024-07-26 19:11:48.043 [info] > git check-ignore -v -z --stdin [3ms]
+2024-07-26 19:11:50.173 [info] > git status -z -uall [2493ms] (cancelled)
+2024-07-26 19:12:10.054 [info] > git merge-base refs/heads/main refs/remotes/vrgremote/main [1088ms]
+2024-07-26 19:12:10.092 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/vrgremote/main [9ms]
+2024-07-26 19:12:10.119 [info] > git diff --name-status -z --diff-filter=ADMR 0f48a27c83faa8c0ada5a89ca321d1cf1d53b8f0...refs/remotes/vrgremote/main [20ms]

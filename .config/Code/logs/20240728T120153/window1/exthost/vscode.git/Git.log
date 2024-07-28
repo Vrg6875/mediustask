@@ -1,0 +1,196 @@
+2024-07-28 12:01:57.780 [info] Log level: Info
+2024-07-28 12:01:57.780 [info] Validating found git in: "git"
+2024-07-28 12:01:57.780 [info] Using git "2.34.1" from "git"
+2024-07-28 12:01:57.780 [info] > git rev-parse --show-toplevel [55ms]
+2024-07-28 12:01:57.780 [info] > git rev-parse --git-dir --git-common-dir [112ms]
+2024-07-28 12:01:57.780 [info] Open repository: /home/vicky
+2024-07-28 12:01:57.783 [info] > git rev-parse --show-toplevel [15ms]
+2024-07-28 12:01:57.784 [info] > git config --get commit.template [24ms]
+2024-07-28 12:01:57.807 [info] > git rev-parse --show-toplevel [12ms]
+2024-07-28 12:01:57.823 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [18ms]
+2024-07-28 12:01:57.857 [info] > git rev-parse --show-toplevel [35ms]
+2024-07-28 12:01:57.923 [info] > git rev-parse --show-toplevel [58ms]
+2024-07-28 12:01:58.535 [info] > git show --textconv :weather/weatherproject/weatherapp/views.py [91ms]
+2024-07-28 12:01:58.535 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/views.py [77ms]
+2024-07-28 12:01:58.598 [info] > git check-ignore -v -z --stdin [11ms]
+2024-07-28 12:02:00.358 [info] > git status -z -uall [2437ms] (cancelled)
+2024-07-28 12:02:57.371 [info] > git merge-base refs/heads/main refs/remotes/vrgremote/main [817ms]
+2024-07-28 12:02:57.395 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/vrgremote/main [17ms]
+2024-07-28 12:02:57.407 [info] > git config --get commit.template [37ms]
+2024-07-28 12:02:57.439 [info] > git diff --name-status -z --diff-filter=ADMR 0f48a27c83faa8c0ada5a89ca321d1cf1d53b8f0...refs/remotes/vrgremote/main [32ms]
+2024-07-28 12:02:57.471 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [17ms]
+2024-07-28 12:02:57.928 [info] > git status -z -uall [431ms] (cancelled)
+2024-07-28 12:02:58.559 [info] > git fetch [1898ms]
+2024-07-28 12:02:58.559 [info] Missing or invalid credentials.
+Skip silent fetch commands
+Missing or invalid credentials.
+Skip silent fetch commands
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/Vrg6875/newvrg/'
+2024-07-28 12:02:58.566 [info] > git config --get commit.template [2ms]
+2024-07-28 12:02:58.572 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-07-28 12:02:58.603 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/views.py [2ms]
+2024-07-28 12:02:58.624 [info] > git show --textconv :weather/weatherproject/weatherapp/views.py [3ms]
+2024-07-28 12:02:58.917 [info] > git status -z -uall [338ms] (cancelled)
+2024-07-28 12:06:50.050 [info] > git show --textconv :weather/weatherproject/static/style.css [9ms]
+2024-07-28 12:06:50.051 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [2ms]
+2024-07-28 12:06:50.492 [info] > git check-ignore -v -z --stdin [6ms]
+2024-07-28 12:07:11.561 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/homepage.html [17ms]
+2024-07-28 12:07:11.563 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/homepage.html [3ms]
+2024-07-28 12:07:11.914 [info] > git check-ignore -v -z --stdin [2ms]
+2024-07-28 12:07:13.559 [info] > git show --textconv :weather/weatherproject/static/style.css [18ms]
+2024-07-28 12:07:13.565 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [9ms]
+2024-07-28 12:07:15.637 [info] > git check-ignore -v -z --stdin [6ms]
+2024-07-28 12:07:17.310 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/weatherapp/index.html [7ms]
+2024-07-28 12:07:17.313 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/weatherapp/index.html [3ms]
+2024-07-28 12:08:00.337 [info] > git show --textconv :weather/weatherproject/static/style.css [11ms]
+2024-07-28 12:08:00.340 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [4ms]
+2024-07-28 12:08:13.863 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/weatherapp/index.html [17ms]
+2024-07-28 12:08:13.867 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/weatherapp/index.html [6ms]
+2024-07-28 12:08:32.343 [info] > git show --textconv :weather/weatherproject/static/style.css [9ms]
+2024-07-28 12:08:32.345 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [3ms]
+2024-07-28 12:16:31.101 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/weatherapp/index.html [18ms]
+2024-07-28 12:16:31.105 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/weatherapp/index.html [6ms]
+2024-07-28 12:17:44.214 [info] > git show --textconv :weather/weatherproject/static/style.css [18ms]
+2024-07-28 12:17:44.219 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [6ms]
+2024-07-28 12:18:31.237 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/weatherapp/index.html [19ms]
+2024-07-28 12:18:31.241 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/weatherapp/index.html [6ms]
+2024-07-28 12:19:03.478 [info] > git show --textconv :weather/weatherproject/static/style.css [20ms]
+2024-07-28 12:19:03.484 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [8ms]
+2024-07-28 12:19:17.143 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/weatherapp/index.html [19ms]
+2024-07-28 12:19:17.148 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/weatherapp/index.html [7ms]
+2024-07-28 12:19:35.704 [info] > git show --textconv :weather/weatherproject/static/style.css [21ms]
+2024-07-28 12:19:35.709 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [7ms]
+2024-07-28 12:20:39.987 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/weatherapp/index.html [19ms]
+2024-07-28 12:20:39.992 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/weatherapp/index.html [7ms]
+2024-07-28 12:21:06.873 [info] > git show --textconv :weather/weatherproject/static/style.css [19ms]
+2024-07-28 12:21:06.880 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [9ms]
+2024-07-28 12:23:43.865 [info] > git merge-base refs/heads/main refs/remotes/vrgremote/main [2ms]
+2024-07-28 12:23:43.873 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/vrgremote/main [2ms]
+2024-07-28 12:23:45.147 [info] > git check-ignore -v -z --stdin [5ms]
+2024-07-28 12:24:57.215 [info] > git remote add weatherremote https://github.com/Vrg6875/Live-weather-app [7ms]
+2024-07-28 12:24:57.226 [info] > git config --get commit.template [6ms]
+2024-07-28 12:24:57.227 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-07-28 12:24:58.268 [info] > git status -z -uall [1036ms] (cancelled)
+2024-07-28 12:24:59.403 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [3ms]
+2024-07-28 12:24:59.415 [info] > git show --textconv :weather/weatherproject/static/style.css [2ms]
+2024-07-28 12:24:59.427 [info] > git fetch weatherremote [1787ms]
+2024-07-28 12:24:59.427 [info] From https://github.com/Vrg6875/Live-weather-app
+ * [new branch]      main       -> weatherremote/main
+Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+2024-07-28 12:24:59.442 [info] > git config --get commit.template [8ms]
+2024-07-28 12:24:59.442 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-07-28 12:24:59.449 [warning] ENOENT: no such file or directory, open '/home/vicky/.git/refs/remotes/vrgremote/main'
+2024-07-28 12:24:59.451 [info] > git rev-parse refs/remotes/vrgremote/main [2ms]
+2024-07-28 12:24:59.818 [info] > git status -z -uall [361ms] (cancelled)
+2024-07-28 12:25:01.177 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [4ms]
+2024-07-28 12:25:01.198 [info] > git show --textconv :weather/weatherproject/static/style.css [4ms]
+2024-07-28 12:25:01.865 [info] > git push weatherremote main [2048ms]
+2024-07-28 12:25:01.865 [info] To https://github.com/Vrg6875/Live-weather-app
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Vrg6875/Live-weather-app'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2024-07-28 12:25:01.906 [info] > git config --get commit.template [15ms]
+2024-07-28 12:25:01.910 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2024-07-28 12:25:01.923 [warning] ENOENT: no such file or directory, open '/home/vicky/.git/refs/remotes/vrgremote/main'
+2024-07-28 12:25:01.927 [info] > git rev-parse refs/remotes/vrgremote/main [4ms]
+2024-07-28 12:25:02.319 [info] > git status -z -uall [380ms] (cancelled)
+2024-07-28 12:25:10.479 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [9ms]
+2024-07-28 12:25:10.512 [info] > git show --textconv :weather/weatherproject/static/style.css [6ms]
+2024-07-28 12:25:14.768 [info] > git check-ignore -v -z --stdin [6ms]
+2024-07-28 12:28:02.815 [info] > git remote remove vrgremote [14ms]
+2024-07-28 12:28:02.823 [info] > git config --get commit.template [2ms]
+2024-07-28 12:28:02.829 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-07-28 12:28:04.098 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [1ms]
+2024-07-28 12:28:04.105 [info] > git show --textconv :weather/weatherproject/static/style.css [1ms]
+2024-07-28 12:28:04.607 [info] > git status -z -uall [1773ms] (cancelled)
+2024-07-28 12:28:04.616 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [1ms]
+2024-07-28 12:28:05.339 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [716ms]
+2024-07-28 12:28:05.348 [info] > git config --local branch.main.vscode-merge-base [3ms]
+2024-07-28 12:28:05.348 [warning] git config failed: Failed to execute git
+2024-07-28 12:28:05.360 [info] > git reflog refs/heads/main --grep-reflog=branch: Created from *. [6ms]
+2024-07-28 12:28:05.366 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-07-28 12:28:05.366 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-07-28 12:28:05.366 [info] GitHistoryProvider:resolveHistoryItemGroupBase - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:05.366 [info] GitHistoryProvider:resolveHistoryItemGroupCommonAncestor - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:05.645 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [2ms]
+2024-07-28 12:28:05.652 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [1ms]
+2024-07-28 12:28:05.658 [info] > git config --local branch.main.vscode-merge-base [1ms]
+2024-07-28 12:28:05.658 [warning] git config failed: Failed to execute git
+2024-07-28 12:28:05.664 [info] > git reflog refs/heads/main --grep-reflog=branch: Created from *. [2ms]
+2024-07-28 12:28:05.668 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [1ms]
+2024-07-28 12:28:05.668 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-07-28 12:28:05.668 [info] GitHistoryProvider:resolveHistoryItemGroupBase - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:05.668 [info] GitHistoryProvider:resolveHistoryItemGroupCommonAncestor - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:47.690 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [2ms]
+2024-07-28 12:28:47.703 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [2ms]
+2024-07-28 12:28:47.714 [info] > git config --local branch.main.vscode-merge-base [3ms]
+2024-07-28 12:28:47.714 [warning] git config failed: Failed to execute git
+2024-07-28 12:28:47.723 [info] > git reflog refs/heads/main --grep-reflog=branch: Created from *. [3ms]
+2024-07-28 12:28:47.732 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-07-28 12:28:47.732 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-07-28 12:28:47.732 [info] GitHistoryProvider:resolveHistoryItemGroupBase - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:47.732 [info] GitHistoryProvider:resolveHistoryItemGroupCommonAncestor - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:48.033 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [17ms]
+2024-07-28 12:28:48.047 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [2ms]
+2024-07-28 12:28:48.059 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-07-28 12:28:48.059 [warning] git config failed: Failed to execute git
+2024-07-28 12:28:48.071 [info] > git reflog refs/heads/main --grep-reflog=branch: Created from *. [5ms]
+2024-07-28 12:28:48.079 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-07-28 12:28:48.079 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-07-28 12:28:48.079 [info] GitHistoryProvider:resolveHistoryItemGroupBase - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:48.079 [info] GitHistoryProvider:resolveHistoryItemGroupCommonAncestor - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:28:59.595 [info] > git add -A -- . [11920ms]
+2024-07-28 12:28:59.595 [info] warning: adding embedded git repository: .nvm
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> .nvm
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached .nvm
+hint: 
+hint: See "git help submodule" for more information.
+warning: adding embedded git repository: Desktop/eventplanner
+warning: adding embedded git repository: gitvrg
+warning: adding embedded git repository: recipe project
+warning: adding embedded git repository: submittask/task
+2024-07-28 12:29:01.497 [info] > git show --textconv :.git/COMMIT_EDITMSG [11ms]
+2024-07-28 12:29:01.501 [info] > git ls-files --stage -- /home/vicky/.git/COMMIT_EDITMSG [9ms]
+2024-07-28 12:29:01.910 [info] > git check-ignore -v -z --stdin [43ms]
+2024-07-28 12:29:02.033 [info] > git ls-files --stage -- /home/vicky/.git/COMMIT_EDITMSG [7ms]
+2024-07-28 12:29:02.051 [info] > git show --textconv :.git/COMMIT_EDITMSG [10ms]
+2024-07-28 12:29:08.296 [info] > git -c user.useConfigOnly=true commit --quiet [8696ms]
+2024-07-28 12:29:08.296 [info] Aborting commit due to empty commit message.
+2024-07-28 12:29:08.311 [info] > git config --get commit.template [5ms]
+2024-07-28 12:29:08.329 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [11ms]
+2024-07-28 12:29:08.548 [info] > git show --textconv :weather/weatherproject/static/style.css [10ms]
+2024-07-28 12:29:08.553 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [9ms]
+2024-07-28 12:29:08.559 [info] > git cat-file -s 2caff0bef723081c5bca945ad3dfdc41dde7dcbf [1ms]
+2024-07-28 12:29:08.837 [info] > git status -z -uall [494ms] (cancelled)
+2024-07-28 12:29:08.852 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [3ms]
+2024-07-28 12:29:08.863 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [1ms]
+2024-07-28 12:29:09.696 [info] > git config --local branch.main.vscode-merge-base [823ms]
+2024-07-28 12:29:09.697 [warning] git config failed: Failed to execute git
+2024-07-28 12:29:09.728 [info] > git reflog refs/heads/main --grep-reflog=branch: Created from *. [10ms]
+2024-07-28 12:29:09.748 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [14ms]
+2024-07-28 12:29:09.748 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-07-28 12:29:09.748 [info] GitHistoryProvider:resolveHistoryItemGroupBase - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:29:09.748 [info] GitHistoryProvider:resolveHistoryItemGroupCommonAncestor - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:29:10.059 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [2ms]
+2024-07-28 12:29:10.066 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main [2ms]
+2024-07-28 12:29:10.078 [info] > git config --local branch.main.vscode-merge-base [3ms]
+2024-07-28 12:29:10.078 [warning] git config failed: Failed to execute git
+2024-07-28 12:29:10.086 [info] > git reflog refs/heads/main --grep-reflog=branch: Created from *. [2ms]
+2024-07-28 12:29:10.092 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-07-28 12:29:10.092 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-07-28 12:29:10.092 [info] GitHistoryProvider:resolveHistoryItemGroupBase - Failed to resolve history item group base for 'refs/heads/main'
+2024-07-28 12:29:10.092 [info] GitHistoryProvider:resolveHistoryItemGroupCommonAncestor - Failed to resolve history item group base for 'refs/heads/main'

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'taran.css' %}">
+
+</head>
+<body>
+
+<h1>vicky calcuator</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+    
+    <div>
+        <label>value1</label>
+        <input type="text" name="num1" value={{n1}}>
+    </div>   
+    <br>
+    <div>
+        <label>select opr</label>
+        <select name="opr">
+            <option value="+"> + </option>    
+            <option value="-"> - </option> 
+            <option value="*"> * </option> 
+            <option value="/"> /</option> 
+        </select>
+    <div>
+        <label>value2</label>
+        <input type="text" name="num2" value={{n2}}>
+
+    </div> 
+    <br>  
+    <div>
+       
+        <input type="submit" value="calculate" >
+    </div>   
+    <br>
+    <div>
+        output:<input type="text" value={{cal}}>
+    </div>    
+</form>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "indentationRules": {
+    "decreaseIndentPattern": "^\\s*\\\\end{(?!document)",
+    "increaseIndentPattern": "\\\\begin{(?!document)([^}]*)}(?!.*\\\\end{\\1})"
+  },
+  "folding": {
+    "markers": {
+      "start": "^\\s*%\\s*#?region\\b.*",
+      "end": "^\\s*%\\s*#?endregion\\b.*"
+    }
+  },
+  "comments": {
+    "lineComment": "%"
+  },
+  "autoCloseBefore": ";:.,=}])>\\` \n\t$",
+  "wordPattern": "(__)|(\\*\\*)|(@.)|(\\.\\.\\.)|([^\\s`'\"~_!?|$#@%^&*\\-=+;:,.<>(){}[\\]\\\\\\/]{2,})",
+  "brackets": [
+    [
+      "{",
+      "}"
+    ],
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ],
+    [
+      "\\left(",
+      "\\right)"
+    ],
+    [
+      "\\left[",
+      "\\right]"
+    ],
+    [
+      "\\left{",
+      "\\right}"
+    ],
+    [
+      "\\left<",
+      "\\right>"
+    ]
+  ],
+  "autoClosingPairs": [
+    {
+      "open": "{",
+      "close": "}"
+    },
+    {
+      "open": "[",
+      "close": "]"
+    },
+    {
+      "open": "(",
+      "close": ")"
+    },
+    {
+      "open": "`",
+      "close": "'"
+    }
+  ],
+  "surroundingPairs": [
+    [
+      "{",
+      "}"
+    ],
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ],
+    [
+      "\"",
+      "\""
+    ],
+    [
+      "$",
+      "$"
+    ],
+    [
+      "'",
+      "'"
+    ],
+    [
+      "`",
+      "'"
+    ]
+  ]
+}

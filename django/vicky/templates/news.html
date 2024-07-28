@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News</title>
+    <style>
+        .main {
+            width: 100%;
+            height: 50px;
+            background-color: orange;
+        }
+
+        .vicky {
+            color: blue;
+        }
+        .vime{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="vicky">News</h1>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="newsname"> <!-- Changed the input name to match 'name' -->
+        <input type="submit" value="Search">
+    </form>
+
+    {% for item in newsdata %}
+        <div class="main">
+            <h2>{{ item.today_news |safe }}</h2>
+        
+        </div>
+        <div class="vime">
+        <p class="vime">{{ item.des |safe }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

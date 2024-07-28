@@ -1,0 +1,8 @@
+2024-07-28 12:01:54.902 [info] Started local extension host with pid 2846.
+2024-07-28 12:01:56.884 [error] [sidthesloth.html5-boilerplate]: Unknown language in `contributes.html5-boilerplate.language`. Provided value: njk
+2024-07-28 12:01:56.885 [error] [sidthesloth.html5-boilerplate]: Unknown language in `contributes.html5-boilerplate.language`. Provided value: django-html
+2024-07-28 12:01:58.338 [info] [perf] Render performance baseline is 53ms
+2024-07-28 12:01:58.602 [error] [Extension Host] (node:2846) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `exe --trace-warnings ...` to show where the warning was created)
+2024-07-28 12:02:06.152 [error] [File Watcher (parcel)] Unexpected error: inotify_add_watch on '/home/vicky/.config/Code/logs/20240722T233635' failed: No such file or directory (EUNKNOWN) (path: /home/vicky)
+2024-07-28 12:02:06.152 [error] [File Watcher (universal)] restarting watcher after error: inotify_add_watch on '/home/vicky/.config/Code/logs/20240722T233635' failed: No such file or directory

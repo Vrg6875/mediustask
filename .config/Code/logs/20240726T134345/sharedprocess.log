@@ -1,0 +1,15 @@
+2024-07-26 13:43:52.654 [info] Getting Manifest... genuitecllc.codetogether
+2024-07-26 13:43:53.534 [info] Installing extension: genuitecllc.codetogether
+2024-07-26 13:43:58.367 [info] Extension signature verification result for genuitecllc.codetogether: Success. Duration: 2257ms.
+2024-07-26 13:43:58.596 [info] Extracted extension to file:///home/vicky/.vscode/extensions/genuitecllc.codetogether-2024.3.1: genuitecllc.codetogether
+2024-07-26 13:43:58.611 [info] Renamed to /home/vicky/.vscode/extensions/genuitecllc.codetogether-2024.3.1
+2024-07-26 13:43:58.613 [info] Extracting extension completed. genuitecllc.codetogether
+2024-07-26 13:43:58.626 [info] Extension installed successfully: genuitecllc.codetogether
+2024-07-26 13:43:58.630 [info] Marked extension as uninstalled genuitecllc.codetogether-2024.3.0
+2024-07-26 13:43:58.701 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/vicky/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/vicky/.vscode/extensions/extensions.json.vsctmp'
+    at a.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30019)
+    at b (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30130)
+    at t.hb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:36600)
+    at t.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:29040)
+    at async $.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:16186)
+    at async J.sb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:109501)

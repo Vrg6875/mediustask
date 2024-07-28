@@ -1,0 +1,17 @@
+2024/07/23-22:44:00.444 2efa2 Creating DB /home/vicky/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb since it was missing.
+2024/07/23-22:44:00.447 2efa2 Reusing MANIFEST /home/vicky/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/23-23:28:13.820 2efa3 Level-0 table #5: started
+2024/07/23-23:28:13.866 2efa3 Level-0 table #5: 2313853 bytes OK
+2024/07/23-23:28:13.874 2efa3 Delete type=0 #3
+2024/07/23-23:34:44.424 2efa3 Level-0 table #7: started
+2024/07/23-23:34:44.431 2efa3 Level-0 table #7: 334807 bytes OK
+2024/07/23-23:34:44.441 2efa3 Delete type=0 #4
+2024/07/23-23:34:44.441 2efa3 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/07/23-23:34:44.442 2efa3 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01\x02\x01\x0e\x00u\x00n\x00s\x00e\x00n\x00t\x00p\x00l\x00a\x00y\x00d\x00a\x00t\x00a' @ 9533 : 1
+2024/07/23-23:34:44.442 2efa3 Compacting 1@1 + 1@2 files
+2024/07/23-23:34:44.453 2efa3 Generated table #8@1: 52 keys, 10789 bytes
+2024/07/23-23:34:44.453 2efa3 Compacted 1@1 + 1@2 files => 10789 bytes
+2024/07/23-23:34:44.459 2efa3 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/07/23-23:34:44.459 2efa3 Delete type=2 #7
+2024/07/23-23:34:44.459 2efa3 Delete type=2 #5
+2024/07/23-23:34:44.460 2efa3 Manual compaction at level-1 from '\x00\x02\x01\x02\x01\x0e\x00u\x00n\x00s\x00e\x00n\x00t\x00p\x00l\x00a\x00y\x00d\x00a\x00t\x00a' @ 9533 : 1 .. (end); will stop at (end)

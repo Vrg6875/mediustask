@@ -1,0 +1,43 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'taran.css' %}">
+<h1>create new account</h1>
+
+<form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">first name</label>
+      <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">last_name</label>
+      <input type="text" name="last_name" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <label class="exampleInputPassword1" for="exampleCheck1">username</label>
+      <input type="text" name="username" class="form-control" id="exampleCheck1">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">password1</label>
+        <input type="password" name="password1" class="form-control" id="exampleInputPassword1">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">password2</label>
+        <input type="password" name="password2" class="form-control" id="exampleInputPassword1">
+      </div>
+      
+    </div>
+    <div>
+        <p>already have a account <a href="/login/">login</a></p>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

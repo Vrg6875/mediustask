@@ -1,0 +1,22 @@
+2024-07-28 12:01:56.154 [info] Starting Python Locator /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python-env-tools/bin/pet server
+2024-07-28 12:01:56.154 [info] Started Refreshing Environments
+2024-07-28 12:01:56.155 [info] Discovered env: /home/vicky/.local/share/virtualenvs/Django-Ecommerce-hiiekVe3/bin/python
+2024-07-28 12:01:56.233 [info] Discovered env: /usr/bin/python
+2024-07-28 12:01:56.305 [info] Discovered env: /bin/python
+2024-07-28 12:01:57.611 [warning] Unknown Env ("/snap/bin/python38") in Path resolved as ResolvedPythonEnv { executable: "/snap/python38/22/usr/bin/python3.8", prefix: "/snap/python38/22/usr", version: "3.8.0.final.0", is64_bit: true, symlink: Some(["/snap/bin/python38"]) } and reported as GlobalPaths
+2024-07-28 12:01:57.723 [info] Discovered env: /snap/python38/22/usr/bin/python3.8
+2024-07-28 12:01:57.779 [warning] Unknown Env ("/snap/bin/python38") in Path resolved as ResolvedPythonEnv { executable: "/snap/python38/22/usr/bin/python3.8", prefix: "/snap/python38/22/usr", version: "3.8.0.final.0", is64_bit: true, symlink: Some(["/snap/bin/python38"]) } and reported as GlobalPaths
+2024-07-28 12:01:57.783 [info] Locator Conda took 85.749668ms
+2024-07-28 12:01:57.795 [info] Locator Homebrew took 38.716µs
+2024-07-28 12:01:57.806 [info] Locator LinuxGlobalPython took 248.208128ms
+2024-07-28 12:01:57.806 [info] Locator PipEnv took 429ns
+2024-07-28 12:01:57.822 [info] Locator Poetry took 92.282µs
+2024-07-28 12:01:57.823 [info] Locator PyEnv took 3.839282ms
+2024-07-28 12:01:57.856 [info] Locator Venv took 510ns
+2024-07-28 12:01:57.857 [info] Locator VirtualEnv took 241ns
+2024-07-28 12:01:57.865 [info] Locator VirtualEnvWrapper took 167ns
+2024-07-28 12:01:57.923 [info] Environments found using locators in 276.251162ms
+2024-07-28 12:01:57.962 [info] Environments in PATH found in 1.225356077s
+2024-07-28 12:01:57.967 [info] Environments in global virtual env paths found in 63.647163ms
+2024-07-28 12:01:57.977 [info] Environments in custom search paths found in 81.558787ms
+2024-07-28 12:01:57.978 [info] Refresh completed in 1237ms

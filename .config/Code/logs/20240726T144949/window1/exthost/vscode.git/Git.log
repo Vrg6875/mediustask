@@ -1,0 +1,54 @@
+2024-07-26 14:49:51.892 [info] Log level: Info
+2024-07-26 14:49:51.892 [info] Validating found git in: "git"
+2024-07-26 14:49:51.892 [info] Using git "2.34.1" from "git"
+2024-07-26 14:49:51.892 [info] > git rev-parse --show-toplevel [91ms]
+2024-07-26 14:49:51.920 [info] > git rev-parse --git-dir --git-common-dir [66ms]
+2024-07-26 14:49:51.941 [info] Open repository: /home/vicky
+2024-07-26 14:49:51.978 [info] > git rev-parse --show-toplevel [17ms]
+2024-07-26 14:49:51.979 [info] > git config --get commit.template [25ms]
+2024-07-26 14:49:51.996 [info] > git rev-parse --show-toplevel [9ms]
+2024-07-26 14:49:52.034 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [41ms]
+2024-07-26 14:49:52.044 [info] > git rev-parse --show-toplevel [41ms]
+2024-07-26 14:49:52.567 [info] > git check-ignore -v -z --stdin [6ms]
+2024-07-26 14:49:53.916 [info] > git fetch [1975ms]
+2024-07-26 14:49:53.916 [info] Missing or invalid credentials.
+Skip silent fetch commands
+Missing or invalid credentials.
+Skip silent fetch commands
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/Vrg6875/newvrg/'
+2024-07-26 14:49:53.939 [info] > git status -z -uall [1544ms] (cancelled)
+2024-07-26 14:49:53.940 [info] > git config --get commit.template [12ms]
+2024-07-26 14:49:53.974 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [14ms]
+2024-07-26 14:49:53.975 [info] > git config --get commit.template [36ms]
+2024-07-26 14:49:53.976 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-07-26 14:49:54.675 [info] > git status -z -uall [693ms] (cancelled)
+2024-07-26 14:49:54.952 [info] > git show --textconv :weather/weatherproject/weatherproject/settings.py [22ms]
+2024-07-26 14:49:54.962 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherproject/settings.py [11ms]
+2024-07-26 16:36:48.556 [info] > git check-ignore -v -z --stdin [10ms]
+2024-07-26 16:37:03.512 [info] > git check-ignore -v -z --stdin [2ms]
+2024-07-26 16:37:05.023 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/homepage.html [7ms]
+2024-07-26 16:37:05.025 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/homepage.html [3ms]
+2024-07-26 16:39:42.161 [info] > git check-ignore -v -z --stdin [5ms]
+2024-07-26 16:39:44.597 [info] > git show --textconv :weather/weatherproject/static/style.css [7ms]
+2024-07-26 16:39:44.602 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [4ms]
+2024-07-26 16:41:26.292 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/homepage.html [13ms]
+2024-07-26 16:41:26.294 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/homepage.html [2ms]
+2024-07-26 16:42:02.932 [info] > git show --textconv :weather/weatherproject/static/style.css [22ms]
+2024-07-26 16:42:02.952 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [22ms]
+2024-07-26 16:42:54.841 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/homepage.html [12ms]
+2024-07-26 16:42:54.843 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/homepage.html [3ms]
+2024-07-26 16:46:09.172 [info] > git show --textconv :weather/weatherproject/static/style.css [14ms]
+2024-07-26 16:46:09.174 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [3ms]
+2024-07-26 16:46:32.455 [info] > git show --textconv :weather/weatherproject/weatherapp/templates/homepage.html [15ms]
+2024-07-26 16:46:32.458 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/templates/homepage.html [4ms]
+2024-07-26 16:48:39.275 [info] > git show --textconv :weather/weatherproject/static/style.css [12ms]
+2024-07-26 16:48:39.278 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/static/style.css [3ms]
+2024-07-26 17:43:15.817 [info] > git show --textconv :weather/weatherproject/weatherapp/models.py [12ms]
+2024-07-26 17:43:15.824 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/models.py [8ms]
+2024-07-26 17:43:17.499 [info] > git show --textconv :weather/weatherproject/weatherapp/urls.py [6ms]
+2024-07-26 17:43:17.500 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/urls.py [2ms]
+2024-07-26 17:43:20.005 [info] > git show --textconv :weather/weatherproject/weatherapp/tests.py [17ms]
+2024-07-26 17:43:20.009 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/tests.py [6ms]
+2024-07-26 17:43:21.598 [info] > git show --textconv :weather/weatherproject/weatherapp/views.py [7ms]
+2024-07-26 17:43:21.599 [info] > git ls-files --stage -- /home/vicky/weather/weatherproject/weatherapp/views.py [2ms]

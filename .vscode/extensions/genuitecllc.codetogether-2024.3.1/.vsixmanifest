@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Language="en-US" Id="codetogether" Version="2024.3.1" Publisher="genuitecllc"/>
+    <DisplayName>CodeTogether Live</DisplayName>
+    <Description xml:space="preserve">Add CodeTogether Live to VS Code to live share your IDE and coding sessions. Cross-IDE support for VS Code, IntelliJ and Eclipse. Free plan always available!</Description>
+    <Tags>share,pair programming,team,remote,collaboration,debuggers,ct-plaintext,CodeTogether Plain Text,CodeTogether text,ct-jsonc,CodeTogether JSON with Comments,ct-bat,CodeTogether Batch,CodeTogether bat,ct-clojure,CodeTogether Clojure,CodeTogether clojure,ct-coffeescript,CodeTogether Coffeescript,CodeTogether coffeescript,ct-csharp,CodeTogether CSharp,CodeTogether C#,CodeTogether csharp,ct-css,CodeTogether CSS,CodeTogether css,ct-fsharp,CodeTogether F#,CodeTogether FSharp,CodeTogether fsharp,ct-groovy,CodeTogether Groovy,CodeTogether groovy,ct-handlebars,CodeTogether Handlebars,CodeTogether handlebars,ct-hlsl,CodeTogether HLSL,CodeTogether hlsl,ct-ini,CodeTogether INI,CodeTogether ini,CodeTogether properties,CodeTogether toml,ct-log,CodeTogether log,ct-lua,CodeTogether Lua,CodeTogether lua,ct-makefile,CodeTogether Makefile,CodeTogether makefile,ct-objective-c,CodeTogether Objective-C,ct-perl,CodeTogether Perl,CodeTogether perl,ct-powershell,CodeTogether PowerShell,CodeTogether powershell,CodeTogether ps,CodeTogether ps1,ct-jade,CodeTogether Pug,CodeTogether Jade,CodeTogether jade,ct-r,CodeTogether R,CodeTogether r,ct-razor,CodeTogether Razor,CodeTogether razor,ct-shaderlab,CodeTogether ShaderLab,CodeTogether shaderlab,ct-sql,CodeTogether SQL,ct-swift,CodeTogether Swift,CodeTogether swift,ct-vb,CodeTogether Visual Basic,CodeTogether vb,ct-html,CodeTogether HTML,CodeTogether htm,CodeTogether html,CodeTogether xhtml,ct-jsp,CodeTogether Java Server Pages,CodeTogether jsp,CodeTogether JSP,CodeTogether jstl,CodeTogether JSTL,ct-less,CodeTogether Less,CodeTogether less,ct-scss,CodeTogether Scss,CodeTogether scss,ct-markdown,CodeTogether Markdown,CodeTogether markdown,ct-shell,CodeTogether Shell,CodeTogether sh,ct-tcl,CodeTogether TCL,CodeTogether tcl,CodeTogether Tcl,ct-xml,CodeTogether XML,CodeTogether xml,ct-xsl,CodeTogether XSL,CodeTogether xsl,ct-java,CodeTogether Java,CodeTogether java,ct-typescript,CodeTogether TypeScript,CodeTogether typescript,CodeTogether ts,ct-typescriptreact,CodeTogether TypeScript React,CodeTogether tsx,ct-javascript,CodeTogether JavaScript,CodeTogether javascript,CodeTogether js,ct-javascriptreact,CodeTogether JavaScript React,CodeTogether jsx,ct-jsx-tags,ct-python,CodeTogether Python,CodeTogether py,ct-go,CodeTogether Go,CodeTogether go,ct-rust,CodeTogether Rust,CodeTogether rust,ct-php,CodeTogether PHP,CodeTogether php,ct-c,CodeTogether C,CodeTogether c,ct-cpp,CodeTogether C++,CodeTogether Cpp,CodeTogether cpp,ct-json,CodeTogether JSON,CodeTogether json,ct-kotlin,CodeTogether kotlin,CodeTogether Kotlin,ct-vue,CodeTogether vue,CodeTogether Vue,ct-scala,CodeTogether Scala,CodeTogether scala,ct-twig,CodeTogether twig,CodeTogether Twig,ct-Cobol,CodeTogether Cobol,CodeTogether cobol,ct-elixir,CodeTogether Elixir,CodeTogether elixir,ct-dart,CodeTogether Dart,CodeTogether dart,ct-yaml,CodeTogether yaml,CodeTogether Yaml,ct-diff,CodeTogether Diff,CodeTogether diff,ct-docker,CodeTogether Docker,CodeTogether docker,ct-objective-cpp,CodeTogether Objective-Cpp,CodeTogether Objective-C++,ct-ruby,CodeTogether Ruby,CodeTogether ruby,ct-abap,CodeTogether abap,CodeTogether Abap,ct-latex,CodeTogether Latex,CodeTogether latex,ct-bibtex,CodeTogether BibTex,CodeTogether bibtex,ct-abl,CodeTogether ABL,CodeTogether abl</Tags>
+    <Categories>Other</Categories>
+    <GalleryFlags>Public</GalleryFlags>
+    <Badges></Badges>
+    <Properties>
+      <Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.44.0" />
+      <Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+      <Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
+      <Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+      
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/CodeTogether-Inc/CodeTogether-Live" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/CodeTogether-Inc/CodeTogether-Live" />
+        
+          <Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/CodeTogether-Inc/CodeTogether-Live" />
+        
+      
+      
+      
+      <Property Id="Microsoft.VisualStudio.Services.Branding.Color" Value="#000000" />
+      <Property Id="Microsoft.VisualStudio.Services.Branding.Theme" Value="dark" />
+      <Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+      
+      
+    </Properties>
+    <License>extension/LICENSE.txt</License>
+    <Icon>extension/codetogether-circle-128.png</Icon>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/codetogether-circle-128.png" Addressable="true" />
+  </Assets>
+</PackageManifest>

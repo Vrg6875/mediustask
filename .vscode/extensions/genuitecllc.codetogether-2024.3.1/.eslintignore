@@ -1,0 +1,4 @@
+/src/views/*
+/src/typings/*
+/src/modules/team/team-jsonrpc-response.ts
+/src/common/messaging/connection-error-handler.d.ts

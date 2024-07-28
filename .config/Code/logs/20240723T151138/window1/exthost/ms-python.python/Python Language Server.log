@@ -1,0 +1,27 @@
+2024-07-23 15:11:42.413 [info] (Client) Pylance async client (2024.7.1) started with python extension (2024.10.0)
+2024-07-23 15:11:43.159 [info] [Info  - 15:11:43] (190709) Pylance language server 2024.7.1 (pyright version 1.1.369, commit 1168be71) starting
+2024-07-23 15:11:43.159 [info] [Info  - 15:11:43] (190709) Server root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-23 15:11:43.159 [info] [Info  - 15:11:43] (190709) Starting service instance "vicky"
+2024-07-23 15:11:43.207 [info] [Info  - 15:11:43] (190709) Setting pythonPath for service "vicky": "/usr/bin/python"
+2024-07-23 15:11:43.207 [info] [Info  - 15:11:43] (190709) Setting environmentName for service "vicky": "3.10.12 (global)"
+2024-07-23 15:11:43.207 [info] [Info  - 15:11:43] (190709) No include entries specified; assuming /home/vicky/Desktop/eventplanner/vicky
+2024-07-23 15:11:43.208 [info] [Info  - 15:11:43] (190709) Auto-excluding **/node_modules
+2024-07-23 15:11:43.208 [info] [Info  - 15:11:43] (190709) Auto-excluding **/__pycache__
+2024-07-23 15:11:43.208 [info] [Info  - 15:11:43] (190709) Auto-excluding **/.*
+2024-07-23 15:11:43.231 [info] [Info  - 15:11:43] (190709) Assuming Python version 3.10.12.final.0
+2024-07-23 15:11:43.310 [info] [Info  - 15:11:43] (190709) Found 23 source files
+2024-07-23 15:11:43.613 [info] [Info  - 15:11:43] (190709) Background analysis(1) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-23 15:11:43.615 [info] [Info  - 15:11:43] (190709) Background analysis(1) started
+2024-07-23 15:11:49.556 [info] [Info  - 15:11:49] (190709) Setting pythonPath for service "vicky": "/usr/bin/python"
+2024-07-23 15:11:49.556 [info] [Info  - 15:11:49] (190709) Setting environmentName for service "vicky": "3.10.12 (global)"
+2024-07-23 15:11:49.556 [info] [Info  - 15:11:49] (190709) No include entries specified; assuming /home/vicky/Desktop/eventplanner/vicky
+2024-07-23 15:11:49.556 [info] [Info  - 15:11:49] (190709) Auto-excluding **/node_modules
+2024-07-23 15:11:49.556 [info] [Info  - 15:11:49] (190709) Auto-excluding **/__pycache__
+2024-07-23 15:11:49.556 [info] [Info  - 15:11:49] (190709) Auto-excluding **/.*
+2024-07-23 15:11:49.597 [info] [Info  - 15:11:49] (190709) Assuming Python version 3.10.12.final.0
+2024-07-23 15:11:49.826 [info] [Info  - 15:11:49] (190709) Found 23 source files
+2024-07-23 15:12:08.610 [info] [Info  - 15:12:08] (190709) Indexer background runner(2) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (index)
+2024-07-23 15:12:08.611 [info] [Info  - 15:12:08] (190709) Indexing(2) started
+2024-07-23 15:12:09.273 [info] [Info  - 15:12:09] (190709) scanned(2) 109 files over 1 exec env
+2024-07-23 15:12:09.932 [info] [Info  - 15:12:09] (190709) indexed(2) 55 files over 1 exec env
+2024-07-23 15:12:09.973 [info] [Info  - 15:12:09] (190709) Indexing finished(2).

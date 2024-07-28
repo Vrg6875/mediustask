@@ -1,468 +1,3 @@
-sudo docker-compose up
-cd vicky/
-python manage.py runserver
-sudo docker-compose up
-python manage.py runserver
-sudo docker-compose up
-python manage.py runserver
-sudo docker ps -a
-sudo docker ps images
-sudo docker images
-sudo docker start cedd
-sudo docker ps -a
-sudo docker start 1d
-sudo docker ps -a
-sudo docker images
-cd vicky/
-sudo docker-compose up
-sudo docker build
-sudo docker-compose up
-sudo docker build -t my_image .
-sudo docker-compose up
-sudo docker build -t my_image .
-sudo docker images
-sudo docker rmi 0035
-sudo docker images
-sudo docker rmi 9b
-sudo docker images
-sudo docker rmi ce
-sudo docker images
-sudo docker rmi aa47
-sudo docker images
-sudo docker rmi cedd
-sudo docker stop 1d
-sudo docker rmi cedd
-sudo docker images
-sudo docker ps -a
-sudo docker rm 1d25
-sudo docker ps -a
-sudo docker images
-sudo docker rmi cedd
-sudo docker images
-sudo docker-compose up
-sudo docker images
-sudo docker rmi 0035
-sudo docker rm 5067
-sudo docker images
-sudo docker ps -a
-sudo docker rmi 0035
-sudo docker-compose up
-sudo docker ps -a
-sudo docker rm a0
-sudo docker ps -a
-sudo docker images
-sudo docker rmi ac
-sudo docker-compose up
-sudo docker ps -a
-sudo docker rm 6d
-sudo docker-compose up
-sudo docker images
-sudo docker ps -a
-sudo docker-compose up
-sudo docker ps -a
-sudo docker images
-sudo docker ps -a
-npm list tinymce
-sudo npm list tinymce
-pip freeze
-sudo docker ps -a
-sudo docker rm bf
-sudo docker ps -a
-sudo docker images
-sudo docker-compose up
-sudo docker-compose up --build
-sudo docker ps -a
-sudo docker rm 54
-sudo docker ps -a
-sudo docker images
-sudo docker rmi d9
-sudo docker images
-sudo docker build -t myfirstimage  .
-sudo docker images
-sudo docker ps -a
-sudo docker build -t myfirstimage  .
-sudo docker-compose up --build
-sudo docker ps -a
-sudo docker images
-sudo docker rmi 2f
-sudo docker rmi 2f0d
-sudo docker ps -a
-sudo docker rm f33
-sudo docker ps -a
-sudo docker rmi 2f
-sudo docker ps -a
-sudo docker images
-sudo docker rmi 2f0d
-sudo docker rmi myfirstimage
-sudo docker images
-sudo docker rmi 2f0d
-sudo docker images
-sudo docker-compose up --build
-sudo docker ps -a
-sudo docker images
-sudo docker-compose up --build
-sudo docker-compose up
-sudo docker-compose up --build
-sudo docker ps -a
-sudo docker rm 2f
-sudo docker ps -a
-sudo docker rm 3e
-sudo docker ps -a
-sudo docker-compose up --build
-cd vicky/
-python manage.py runserver
-clear
-python manage.py runserver
-clear
-python manage.py runserver
-sudo dpkg anydesk_6.3.2-1_amd64.deb
-sudo apt  anydesk_6.3.2-1_amd64.deb
-sudo apt install ./anydesk_6.3.2-1_amd64.deb
-sudo apt libgtkglext1:amd64.
-sudo apt-get install  libgtkglext1:amd64.
-docker images
-docker ps -a
-sudo docker ps -a
-sudo docker compose up
-pip freeze
-sudo docker compose up --build
-pip freeze
-sudo docker compose up --build
-pip freeze
-docker ps -a
-sudo docker ps -a
-sudo docker images
-sudo docker rmi a3
-sudo docker rmi 39
-sudo docker images
-sudo docker rmi 2f
-sudo docker images
-sudo docker compose up --build
-cd 
-cd weather
-cd weatherproject/
-python manage.py runserver
-sudo apt--fix broken install
-sudo apt --fix-broken install
-clear
-sudo snap install postman
-cd vicky/
-sudo docker compose up --build
-python manage.py runserver
-cd weatherproject/
-sudo docker images
-sudo docker rmi ee
-sudo docker rmi 468
-sudo docker images
-sudo docker rmi 926
-sudo docker images
-sudo docker rmi 72
-sudo docker images
-sudo docker ps -a
-sudo docker compose up --build
-sudo docker images
-sudo docker ps -a
-sudo docker compose up 
-docker-compose down
-sudo docker compose up --build
-sudo apt update
-sudo apt upgrade
-sudo apt install postgresql
-psql -V
-sudo -su postgres
-clear
-sudo docker ps -a
-sudo docker images
-sudo docker rmi ce
-sudo docker rmi 40
-sudo docker images
-sudo docker compose up --build
-sudo docker images
-sudo docker ps -a
-python manage.py runserver
-sudo snap install curl
-curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
-sudo apt install pgadmin4
-sudo /usr/pgadmin4/bin/setup-web.sh
-sudo pip install virtualenv
-pip install psycopg2
-clear
-sudo -u postgres psql
-ALTER USER vrg  WITH PASSWORD 'vicky@123';
-sudo passwd vrg
-cut -d: -f1 /etc/passwd
-sudo -i -u postgres
-sudo apt install -y postgresql-common
-sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
-sudo apt install curl ca-certificates
-sudo install -d /usr/share/postgresql-common/pgdg
-sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-sudo apt update
-sudo apt -y install postgresql
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
-sudo rm /etc/apt/sources.list.d/pgdg.list
-sudo apt update
-sudo apt -y install postgresql
-clear
-sudo systemctl start postgresql
-sudo -u postgres psql
-cd vicky/
-python manage.py migarte
-python manage.py migrate
-sudo nano [path_to_postgresql.conf]
-sudo systemctl restart postgresql
-systemctl status postgresql
-sudo systemctl restart postgresql
-sudo iptables -L INPUT -n -v | grep 5432
-sudo firewall-cmd --list-all
-sudo iptables -L INPUT -n -v | grep 5432
-sudo firewall-cmd --add-port=5432/tcp --permanent
-sudo iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
-sudo firewall-cmd --reload
-sudo ufw allow 5432/tcp
-sudo systemctl restart postgresql
-sudo apt update
-sudo apt install ufw
-cd vicky/
-sudo docker bbuild
-sudo docker build
-sudo docker build .
-sudo docker-compose build
-sudo docker-compose build up
-sudo docker-compose up
-sudo docker compose up --build
-sudo docker compose up
-sudo docker 
-sudo docker rmi 407
-sudo docker images
-sudo docker rmi 0e
-sudo docker rmi 8e
-sudo docker rmi 77
-sudo docker images
-sudo docker rmi 58
-sudo docker rmi 60
-sudo docker images
-sudo docker ps -a
-sudo docker rm 8e
-sudo docker images
-sudo docker rmi 8e
-sudo docker stop 407
-sudo docker rmi 8e
-sudo docker stop 407
-sudo docker ps -a
-sudo docker rm 407
-sudo docker rmi 8e
-sudo docker images
-sudo docker compose up --build
-pip freeze
-sudo docker compose up --build
-psql
-sudo psql
-sudo systemctl status postgresql
-sudo docker compose up --build
-sudo docker ps
-sudo docker ps -a
-sudo docker run --name c3 -i -t -d python
-sudo docker ps
-sudo docker compose up --build
-sudo systemctl restart postgresql
-sudo ufw allow 5432/tcp
-host    all             all             127.0.0.1/32            md5
-sudo docker compose up --build
-sudo nano /etc/postgresql/<version>/main/pg_hba.conf
-pg_config --version
-sudo nano /etc/postgresql/16.2/main/pg_hba.conf
-sudo docker compose up --build
-sudo systemctl status postgresql
-sudo nano /etc/postgresql/16.2/main/postgresql.conf
-cd vicky/
-cd /
-cd django
-sudo apt install curl ca-certificates
-sudo install -d /usr/share/postgresql-common/pgdg
-sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7D8D0BF6
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc /usr/share/postgresql-common/pgdg/apt.postgresql.org.gpg
-ls /usr/share/postgresql-common/pgdg/
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc /usr/share/postgresql-common/pgdg/apt.postgresql.org.gpg
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.*
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.*
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc /usr/share/postgresql-common/pgdg/apt.postgresql.org.gpg
-sudo apt remove --purge postgresql-14 postgresql-16 postgresql-client-14 postgresql-client-16 postgresql-common postgresql-contrib
-sudo rm -rf /var/lib/postgresql
-sudo rm -rf /etc/postgresql
-sudo apt update
-sudo rm /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc /usr/share/postgresql-common/pgdg/apt.postgresql.org.gpg
-sudo nano /etc/apt/sources.list.d/pgdg.list
-sudo apt remove --purge postgresql-14 postgresql-16 postgresql-client-14 postgresql-client-16 postgresql-common postgresql-contrib
-sudo rm -rf /var/lib/postgresql
-sudo rm -rf /etc/postgresql
-sudo apt remove --purge postgresql-14 postgresql-16 postgresql-client-14 postgresql-client-16 postgresql-common postgresql-contrib
-sudo apt update
-sudo apt remove --purge postgresql-14 postgresql-16 postgresql-client-14 postgresql-client-16 postgresql-common postgresql-contrib
-sudo rm /etc/apt/sources.list.d/pgdg.list
-sudo apt update
-sudo apt remove --purge postgresql-14 postgresql-16 postgresql-client-14 postgresql-client-16 postgresql-common postgresql-contrib
-sudo apt update
-sudo apt -y install postgresql
-sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-sudo -i -u postgres
-sudo systemctl restart postgresql
-psql
-sudo -i -u postgres
-cd vicky/
-dpkg -l | grep postgresql
-sudo find /etc/postgresql -name "16"
-sudo docker compose up --build
-sudo find /etc/postgresql -name "pg_hba.conf"
-sudo netstat -tuln | grep 5432
-sudo ss -tuln | grep 5432
-sudo apt-get install iproute2
-sudo yum install iproute
-sudo apt-get install iproute2
-sudo docker compose up --build
-sudo ss -tuln | grep 5432
-sudo systemctl restart postgresql
-sudo docker compose up --build
-sudo apt-get remove --purge postgresql
-sudo rm -rf /var/lib/postgresql/
-python manage.py migrate
-sudo apt-get install postgresql
-postgre  --version
-pg_config --version
-sudo pg_createcluster 16.2 main --start
-sudo apt-get install postgresql-16
-sudo pg_createcluster 16.2 main --start
-dpkg -l | grep postgresql
-sudo apt-get install --reinstall postgresql-16.2
-sudo apt-get install postgresql-16
-python manage.py migrate
-sudo systemctl start postgresql
-sudo systemctl restart postgresql
-python manage.py migrate
-sudo docker compose up --build
-python manage.py migrate
-sudo docker compose up --build
-sudo service postgresql start
-docker-compose logs db
-docker-compose run web python manage.py migrate
-sudo docker compose up --build
-sudo docker-compose run web python manage.py migrate
-cd vicky/
-sudo docker compose up --build
-suo docker images
-sudo docker images
-sudo docker rmi f2
-sudo docker ps -a
-sudo docker rm c4
-sudo docker rm 71
-sudo docker rm a5
-sudo docker ps -a
-sudo docker images
-sudo docker rmi f2
-sudo docker images
-sudo docker rmi 5f
-sudo docker rmi 42
-sudo docker rmi 17
-sudo docker rmi b7
-sudo docker rmi 9e
-sudo docker rmi 58
-sudo docker images
-sudo docker compose up --build
-pip freeze
-sudo docker compose up --build
-cd vicky/
-sudo docker images
-sudo docker compose up --build
-/bin/python3
-django-admin startproject vicky
-cd vicky/
-python manage.py startapp recipe
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-python manage.pypy migrate
-python manage.py migrate
-python manage.py runserver
-python manage.py collectstatic
-python manage.py runserver
-/bin/python3 /home/vicky/python/vicky.py
-pip install opencv-python
-/bin/python3 /home/vicky/python/vicky.py
-/bin/python3 /home/vicky/python/vicky.py/bin/python3 /home/vicky/python/vicky.py
-/bin/python3 /home/vicky/python/vicky.py
-django-admin startproject vicky
-cd vicky/
-python manage.py runserver
-sudo docker-compose up
-python manage.py runserver
-cd vicky/
-python manage.py startproject event
-python manage.py startapp event
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-sudo docker-compose up --build
-sudo docker images
-sudo docker rmi 079
-sudo docker images
-sudo docker rmi 99
-sudo docker images
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-sudo docker images
-sudo docker rmi fc
-sudo docker rmi 99
-sudo docker images
-sudo docker rmi d2
-sudo docker images
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-cd weatherproject/
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-sudo docker images
-sudo docker rmi f4
-sudo docker images
-sudo docker rmi 0a
-sudo docker rmi 71
-sudo docker images
-sudo docker rmi 0a
-sudo docker-compose up --build
-cd vicky/
-python manage.py runserver
-cd weatherproject/
-python manage.py runserver
-cd vicky/
-python manage.py runserver
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-sudo docker images
-/
-cd eventproject/
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
-sudo docker-compose up --build
-sudo docker-compose down --rmi all
 sudo docker-compose up --build
 python manage.py runserver
 cd weatherproject/
@@ -1998,3 +1533,468 @@ sudo docker-compose up --build
 sudo docker-compose down 
 python manage.py createsuperuser
 sudo docker-compose down 
+git branch
+git add -A
+git checkout vrg
+git branch feature1
+git branch
+git checkout feature 1
+git checkout feature1
+git branch
+git checkout main
+git branch
+git remote add vickyremote  https://github.com/Vrg6875/vickyrajgupta
+git remote
+git remote -v
+git add -A
+git commit -m "first"
+git push -u vickyremote main
+git commit -m "first"
+git add -A
+clear
+git remote
+git branch
+git add -A
+cd ~/gitknowledge
+# Remove all the problematic directories from the index
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce.2
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce
+git rm --cached -r .local/share/Trash/files/django-ecommerce-1
+git rm --cached -r .local/share/Trash/files/django-ecommerce-api
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management.2
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management
+git rm --cached -r .local/share/Trash/files/eventmanagement
+git rm --cached -r .local/share/Trash/files/eventplanner.2
+git rm --cached -r .local/share/Trash/files/eventplanner.3
+git rm --cached -r .local/share/Trash/files/eventplanner.4
+git rm --cached -r .local/share/Trash/files/eventplanner.5
+git rm --cached -r .local/share/Trash/files/eventplanner.6
+git rm --cached -r .local/share/Trash/files/eventplanner
+git rm --cached -r .local/share/Trash/files/hotel-booking-platform-python
+git rm --cached -r .local/share/Trash/files/hotelhub
+git rm --cached -r .local/share/Trash/files/s/hotel_mern
+git rm --cached -r .local/share/Trash/files/sudhanshu/youtube2022
+git rm --cached -r .local/share/Trash/files/vicky\ hotel/Django---Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vicky\ hotel/Hotel-Booking-Web-App
+git rm --cached -r .local/share/Trash/files/vrg\ hotel/Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vrg/Django-Project-Hotel-Booking
+git rm --cached -r .nvm
+git rm --cached -r Desktop/eventplanner
+cd ~/gitknowledge
+# Remove all the problematic directories from the index
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce.2
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce
+git rm --cached -r .local/share/Trash/files/django-ecommerce-1
+git rm --cached -r .local/share/Trash/files/django-ecommerce-api
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management.2
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management
+git rm --cached -r .local/share/Trash/files/eventmanagement
+git rm --cached -r .local/share/Trash/files/eventplanner.2
+git rm --cached -r .local/share/Trash/files/eventplanner.3
+git rm --cached -r .local/share/Trash/files/eventplanner.4
+git rm --cached -r .local/share/Trash/files/eventplanner.5
+git rm --cached -r .local/share/Trash/files/eventplanner.6
+git rm --cached -r .local/share/Trash/files/eventplanner
+git rm --cached -r .local/share/Trash/files/hotel-booking-platform-python
+git rm --cached -r .local/share/Trash/files/hotelhub
+git rm --cached -r .local/share/Trash/files/s/hotel_mern
+git rm --cached -r .local/share/Trash/files/sudhanshu/youtube2022
+git rm --cached -r .local/share/Trash/files/vicky\ hotel/Django---Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vicky\ hotel/Hotel-Booking-Web-App
+git rm --cached -r .local/share/Trash/files/vrg\ hotel/Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vrg/Django-Project-Hotel-Booking
+git rm --cached -r .nvm
+git rm --cached -r Desktop/eventplanner
+nano .gitignore
+git add -A
+git commit -m "Remove nested repositories and update .gitignore"
+cd ~/gitknowledge
+# Remove all the problematic directories from the index
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce.2
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce
+git rm --cached -r .local/share/Trash/files/django-ecommerce-1
+git rm --cached -r .local/share/Trash/files/django-ecommerce-api
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management.2
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management
+git rm --cached -r .local/share/Trash/files/eventmanagement
+git rm --cached -r .local/share/Trash/files/eventplanner.2
+git rm --cached -r .local/share/Trash/files/eventplanner.3
+git rm --cached -r .local/share/Trash/files/eventplanner.4
+git rm --cached -r .local/share/Trash/files/eventplanner.5
+git rm --cached -r .local/share/Trash/files/eventplanner.6
+git rm --cached -r .local/share/Trash/files/eventplanner
+git rm --cached -r .local/share/Trash/files/hotel-booking-platform-python
+git rm --cached -r .local/share/Trash/files/hotelhub
+git rm --cached -r .local/share/Trash/files/s/hotel_mern
+git rm --cached -r .local/share/Trash/files/sudhanshu/youtube2022
+git rm --cached -r .local/share/Trash/files/vicky\ hotel/Django---Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vicky\ hotel/Hotel-Booking-Web-App
+git rm --cached -r .local/share/Trash/files/vrg\ hotel/Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vrg/Django-Project-Hotel-Booking
+git rm --cached -r .nvm
+git rm --cached -r Desktop/eventplanner
+clear
+git remote add vrgremote https://github.com/Vrg6875/newvrg
+git remote
+git add -A
+git push -u vrgremote main
+git remote
+git branch
+git add -A
+git checkout HEAD~
+git add -A
+git checkout HEAD~
+git status
+git restore
+git checkout -f
+git rm --cached -r .cache/
+.cache/
+echo ".cache/" >> .gitignore
+nano .gitignore
+git rm --cached -r .cache/
+git stash
+git checkout HEAD~
+git stash apply
+git config --global user.name "vrg6875"
+git config --global user.email "vickyrajgupta2003@gmail.com"
+clear
+git add -A
+df -h
+sudo apt-get clean
+sudo apt-get autoremove --purge
+sudo dpkg --configure -a
+sudo apt-get clean
+sudo apt-get autoremove --purge
+git add -A
+sudo docker ps
+sudo docker stop
+git add -A
+git add -A
+.local/share/Trash/files/vicky
+[200~git rm --cached -r .local/share/Trash/files/Django-Ecommerce.2
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce
+git rm --cached -r .local/share/Trash/files/django-ecommerce-1
+git rm --cached -r .local/share/Trash/files/django-ecommerce-api
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management.2
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management
+git rm --cached -r .local/share/Trash/files/eventmanagement
+git rm --cached -r .local/share/Trash/files/eventplanner.2
+git rm --cached -r .local/share/Trash/files/eventplanner.3
+git rm --cached -r .local/share/Trash/files/eventplanner.4
+git rm --cached -r .local/share/Trash/files/eventplanner.5
+git rm --cached -r .local/share/Trash/files/eventplanner.6
+git rm --cached -r .local/share/Trash/files/eventplanner
+git rm --cached -r .local/share/Trash/files/hotel-booking-platform-python
+git rm --cached -r .local/share/Trash/files/hotelhub
+git rm --cached -r .local/share/Trash/files/s/hotel_mern
+git rm --cached -r .local/share/Trash/files/sudhanshu/youtube2022
+git rm --cached -r .local/share/Trash/files/vicky hotel/Django---Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vicky hotel/Hotel-Booking-Web-App
+git rm --cached -r .local/share/Trash/files/vrg hotel/Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vrg/Django-Project-Hotel-Booking
+git rm --cached -r .nvm
+git rm --cached -r Desktop/eventplanner
+~
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce.2
+git rm --cached -r .local/share/Trash/files/Django-Ecommerce
+git rm --cached -r .local/share/Trash/files/django-ecommerce-1
+git rm --cached -r .local/share/Trash/files/django-ecommerce-api
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management.2
+git rm --cached -r .local/share/Trash/files/django-hotel-room-management
+git rm --cached -r .local/share/Trash/files/eventmanagement
+git rm --cached -r .local/share/Trash/files/eventplanner.2
+git rm --cached -r .local/share/Trash/files/eventplanner.3
+git rm --cached -r .local/share/Trash/files/eventplanner.4
+git rm --cached -r .local/share/Trash/files/eventplanner.5
+git rm --cached -r .local/share/Trash/files/eventplanner.6
+git rm --cached -r .local/share/Trash/files/eventplanner
+git rm --cached -r .local/share/Trash/files/hotel-booking-platform-python
+git rm --cached -r .local/share/Trash/files/hotelhub
+git rm --cached -r .local/share/Trash/files/s/hotel_mern
+git rm --cached -r .local/share/Trash/files/sudhanshu/youtube2022
+git rm --cached -r .local/share/Trash/files/vicky hotel/Django---Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vicky hotel/Hotel-Booking-Web-App
+git rm --cached -r .local/share/Trash/files/vrg hotel/Hotel-Management-System
+git rm --cached -r .local/share/Trash/files/vrg/Django-Project-Hotel-Booking
+git rm --cached -r .nvm
+git rm --cached -r Desktop/eventplanner
+git status
+df -h
+sudo apt-get clean
+sudo rm -rf /var/log/*.gz
+sudo rm -rf /tmp/*
+du -sh ~/Documents ~/Downloads ~/Pictures ~/Videos
+rm -rf ~/.local/share/Trash/*
+rm -f .git/index.lock
+git status
+rm -rf ~/.cache/google-chrome
+rm -rf ~/.local/share/Trash/files/*
+sudo rm -rf ~/.local/share/Trash/files/*
+ls -l ~/.local/share/Trash/files/
+sudo chown -R vicky:vicky ~/.local/share/Trash/files/
+sudo rm -rf ~/.local/share/Trash/files/*
+df -h
+git add -A
+sudo chown -R vicky:vicky ~/.local/share/Trash/files/
+sudo rm -rf ~/.local/share/Trash/files/*
+git commit -m "vrg"
+sudo du -ahx / | sort -rh | head -20
+git remove
+git remote
+git branch
+git commit -m "vrg"
+git config --global user.email "vickyrajgupta2003@gmail.com"
+sudo rm -rf ~/.local/share/Trash/files/*
+df -h
+ls -l ~/.gitconfig
+du -sh ~/* | sort -h
+sudo apt-get clean
+dpkg --list | grep linux-image
+sudo apt-get remove --purge linux-image-VERSION
+sudo journalctl --vacuum-time=1d
+sudo apt-get autoremove --purge
+git config --global user.email "vickyrajgupta2003@gmail.com"
+git config --global user.name "vrg6875"
+git remote
+git commit -m "vrg"
+git add -A
+df -h
+sudo du -h --max-depth=1 / | sort -h
+sudo journalctl --vacuum-time=1w
+sudo rm -rf /home/vicky/.local/share/Trash/files/*
+sudo apt-get remove --purge linux-image-VERSION
+code .
+sudo find / -type f -size +100M
+sudo apt-get clean
+sudo apt-get autoremove
+dpkg --list | grep linux-image
+sudo apt-get remove --purge linux-image-VERSION
+sudo journalctl --vacuum-time=1w
+rm -rf ~/.cache/google-chrome/
+rm -rf ~/.local/share/Trash/*
+sudo du -sh /home/*
+sudo du -sh /var/*
+sudo du -sh /usr/*
+sudo rm -rf /var/log/*.log
+sudo rm -rf /tmp/*
+df -h
+sudo rm -rf /tmp/*
+sudo rm -rf /var/tmp/*
+sudo rm -rf /tmp/*
+sudo rm -rf /var/tmp/*
+cd /path/to/desired/parent/directory
+git init
+git remote
+git branch
+git remote
+code .
+code .
+git branch
+git remote
+git branch
+git add -A
+git commit -m "first"
+git branch
+git add -A
+git commit -m "first"
+git add -A
+git commit -m "first"
+git remote
+git commit -m "first"
+git add -A
+git commit -m "first"
+git remote
+git branch
+git branch feature1
+git branch
+git checkout feature1
+git add -A
+git commit -m "first"
+git add -A
+git commit -m "first"
+git checkout master
+git merge feature1
+git checko
+git add -A
+git commit -m "second"
+git checkout master
+git merge feature1
+git checkout master
+git checkout feature1
+git checkout master
+git checkout feature1
+git checkout master
+git checkout feature1
+git add -A
+git commit -m "third"
+git checkout master
+git checkout feature1
+git merge feature1
+git checkout master
+git merge feature1
+git add -A
+git commit -m "thir6d"
+git commit -m "gourth"
+git add -A
+git commit -m "gourth"
+git checkout master
+git checkout feature1
+git add -A
+git commit -m "ok"
+git checkout master
+git merge feature1
+git add -A
+git commit -m "ok"
+git push -u vrgremote master
+git branch
+git checkout feature1
+git checkout master
+git branch
+git checkout master
+git checkout feature1
+git add -A
+git commit -m "ok"
+git checkout master
+git merge feature1
+code .
+git branch
+git remote
+git status
+git branch
+git remote
+git add -A
+git commit -m "updated"
+git branch feature1
+git branch feature2
+git branch
+git checkout feature1
+git branch
+git add _A
+git add -A
+git commit -m "updated feature 1"
+git checkout main
+git merge feaature 1
+git merge feature 1
+git merge feature1
+git branch
+git checkout feature1
+git status
+git add -A
+git commit -m "settings updated"
+git checkout main
+git merge feature1
+git checkout feature2
+git push -u vickyraj feature2
+git remote
+git add -A
+git commit -m "first updated"
+git checkout main
+git merge feature2
+git add -A
+git remote
+git checkout main
+git merge feature2
+git commit -m "first updated"
+git add -A
+git commit -m "first updated"
+code .
+python manage.py runserver
+pip list
+pip install django
+python manage.py runserver
+pip uninstall django
+pip install django
+pip u install django
+pip uninstall django
+pip install django
+rm -rf /home/vicky/.local/lib/python3.10/site-packages/sqlparse-0.5.0.dist-info
+rm -rf /home/vicky/.local/lib/python3.10/site-packages/sqlparse
+pip install django
+python3 -m venv venv
+source venv/bin/activate
+pip install django
+pip install --user django
+pip cache purge
+python manage.py runserver
+pip show psycopg2
+pip install psycopg2-binary
+import psycopg2
+print(psycopg2.__version__)
+source venv/bin/activate
+python manage.py runserver
+sudo dcoker ps
+sudo docker ps
+sudo docker stop
+sudo docker stop b0
+sudo docker ps
+sudo docker ps -a
+sudo docker rm cf
+sudo docker rm 9b
+sudo docker rm b0
+sudo docker ps -a
+sudo docker-compose build
+sudo docker-compose up
+sudo lsof -i :5432
+sudo kill -9 976
+
+sudo docker-compose up
+sudo docker-compose up -d
+sudo docker-compose build
+sudo docker-compose up -d
+sudo docker stop
+sudo docker-compose rmi -all
+sudo docker-compose --rmi all
+sudo docker-compose down
+sudo docker-compose up -d
+sudo docker-compose down
+sudo docker-compose build
+sudo docker-compose up -d
+sudo docker-compose down
+sudo docker- ps
+sudo docker ps
+sudo docker-compose up -d
+pgadmin4
+sudo snap install pgadmin4
+sudo -u postgres psql
+sudo systemctl status postgresql
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+sudo -u postgres psql
+python manage.py runserver
+sudo docker-compose down
+sudo docker ps
+code .
+/usr/bin/python /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/printEnvVariablesToFile.py /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/deactivate/bash/envVars.txt
+cd vicky/
+sudo docker-compose down
+sudo docker-compose build
+sudo docker-compose up -d
+sudo lsof -i: 5432
+sudo lsof -i  :5432
+sudo kill -9 7603
+sudo kill -9 26606
+sudo kill -9 28913
+sudo kill -9 29008
+sudo dcoker ps
+sudo docker ps
+sudo docker stop 4a
+sudo docker rm 4a
+sudo docker ps
+sudo docker ps -a
+sudo docker rm 49
+sudo docker-compose up -d
+sudo docker pps
+sudo docker ps
+python manage.py runserver
+sudo docker-compose down
+sudo docker ps
+sudo docker ps -a
+code .
+code .
+/usr/bin/python /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/printEnvVariablesToFile.py /home/vicky/.vscode/extensions/ms-python.python-2024.10.0-linux-x64/python_files/deactivate/bash/envVars.txt
+python manage.py runserver
+sudo dcoker ps
+sudo docker ps
+sudo docker ps -a
+code .
+/usr/bin/python "/home/vicky/python list/test.py"

@@ -1,0 +1,2543 @@
+{
+	"name": "codetogether",
+	"publisher": "genuitecllc",
+	"displayName": "CodeTogether Live",
+	"description": "Add CodeTogether Live to VS Code to live share your IDE and coding sessions. Cross-IDE support for VS Code, IntelliJ and Eclipse. Free plan always available!",
+	"repository": "https://github.com/CodeTogether-Inc/CodeTogether-Live",
+	"license": "SEE LICENSE IN LICENSE",
+	"preferredProposedApis": [
+		"fileSearchProvider",
+		"findTextInFiles",
+		"terminalDataWriteEvent",
+		"terminalDimensions",
+		"terminalNameChangeEvent",
+		"testObserver",
+		"textSearchProvider"
+	],
+	"keywords": [
+		"share",
+		"pair programming",
+		"team",
+		"remote",
+		"collaboration"
+	],
+	"version": "2024.3.1",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"icon": "codetogether-circle-128.png",
+	"galleryBanner": {
+		"color": "#000000",
+		"theme": "dark"
+	},
+	"main": "./out/extension.js",
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"contributes": {
+		"debuggers": [
+			{
+				"type": "CodeTogether",
+				"label": "Run on Host",
+				"configurationAttributes": {
+					"launch": {
+						"required": [
+							"id"
+						],
+						"properties": {
+							"id": {
+								"type": "string",
+								"description": "Launch configuration identifier on the CodeTogether Live Host",
+								"default": ""
+							},
+							"executionId": {
+								"type": "string",
+								"description": "Binding to the remote launch on the CodeTogether Live Host",
+								"default": ""
+							}
+						}
+					}
+				},
+				"initialConfigurations": [
+					{
+						"type": "CodeTogether",
+						"request": "launch",
+						"name": "Creation of new remote launch configurations is not supported",
+						"id": ""
+					}
+				]
+			}
+		],
+		"configuration": {
+			"title": "CodeTogether Live",
+			"properties": {
+				"codetogether.userName": {
+					"type": "string",
+					"default": "",
+					"description": "Specifies a name for participants to recognize you in sessions.",
+					"scope": "application"
+				},
+				"codetogether.backendUrl": {
+					"type": "string",
+					"default": null,
+					"description": "If your company uses an On-Premise deployment of CodeTogether Live, set the edge-server or locator URL in this setting."
+				},
+				"codetogether.proxy": {
+					"type": "object",
+					"properties": {
+						"host": {
+							"type": "string",
+							"description": "Host to connect to"
+						},
+						"port": {
+							"type": "integer",
+							"description": "Port to connect to"
+						},
+						"type": {
+							"type": "string",
+							"description": "Proxy type",
+							"enum": [
+								"http",
+								"https",
+								"socks5"
+							]
+						},
+						"auth": {
+							"type": "object",
+							"properties": {
+								"user": {
+									"type": "string",
+									"description": "username"
+								},
+								"password": {
+									"type": "string",
+									"description": "password"
+								}
+							}
+						}
+					}
+				},
+				"codetogether.allowUnauthorizedCerts": {
+					"type": "boolean",
+					"description": "Allow unauthorized certificates",
+					"default": false
+				},
+				"codetogether.debug": {
+					"type": "boolean",
+					"description": "Enable debug logging of CodeTogether Live connection setup",
+					"default": false
+				},
+				"codetogether.virtualCursorJoin": {
+					"type": "string",
+					"description": "Define how the Virtual Cursor is assigned when joining a CodeTogether Live Session. This can change at any time once you are in the Sesion.",
+					"default": "sharedVirtualCursor",
+					"enum": [
+						"sharedVirtualCursor",
+						"ownVirtualCursor"
+					],
+					"enumDescriptions": [
+						"Join and Follow the Host",
+						"When Joining get your own cursor, don't follow the host."
+					]
+				},
+				"codetogether.virtualCursorRemember": {
+					"type": "boolean",
+					"description": "Remember Virtual Cursor setting when joining a CodeTogether Live Session and join when ready.",
+					"default": false
+				},
+				"codetogether.terminal.revealOnGuestActivity": {
+					"type": "boolean",
+					"default": true,
+					"description": "When a guest types in a terminal, bring it to front (host only)."
+				}
+			}
+		},
+		"views": {
+			"genuitec-codetogether-presence": [
+				{
+					"id": "com.genuitec.codetogether.presence.treeview",
+					"name": "Session",
+					"when": "!codetogether.views.useWebview"
+				},
+				{
+					"type": "webview",
+					"id": "ct-presence",
+					"name": "Session",
+					"when": "codetogether.views.useWebview"
+				},
+				{
+					"id": "com.genuitec.codetogether.team.treeview",
+					"name": "Team"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "genuitec-codetogether-presence",
+					"title": "CodeTogether Live",
+					"icon": "assets/codetogether-icon.svg"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "codetogether.portForwarding.port.addManual",
+				"title": "Add manual port",
+				"category": "CodeTogether Live",
+				"icon": "$(add)"
+			},
+			{
+				"command": "codetogether.portForwarding.port.removeManual",
+				"title": "Remove manual port",
+				"category": "CodeTogether Live",
+				"icon": "$(remove)"
+			},
+			{
+				"command": "codetogether.team.showTeamUpsellNotification",
+				"title": "Team-members only",
+				"icon": "$(info)"
+			},
+			{
+				"command": "codetogether.portForwarding.port.share",
+				"title": "Share port",
+				"category": "CodeTogether Live",
+				"icon": "$(live-share)"
+			},
+			{
+				"command": "codetogether.portForwarding.port.stopSharing",
+				"title": "Stop sharing",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/close-box-outline.svg",
+					"light": "assets/icons/light/close-box-outline.svg"
+				}
+			},
+			{
+				"command": "codetogether.portForwarding.port.disconnectFromSharedPort",
+				"title": "Disconnect from shared port",
+				"category": "CodeTogether Live",
+				"icon": "$(debug-disconnect)"
+			},
+			{
+				"command": "codetogether.portForwarding.port.connectToSharedPort",
+				"title": "Connect to shared port",
+				"category": "CodeTogether Live",
+				"icon": "$(plug)"
+			},
+			{
+				"command": "com.genuitec.codetogether.session.start",
+				"title": "Start Hosting Session",
+				"category": "CodeTogether Live"
+			},
+			{
+				"command": "com.genuitec.codetogether.session.end",
+				"title": "Stop Sharing",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/close-box-outline.svg",
+					"light": "assets/icons/light/close-box-outline.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.session.leave",
+				"title": "Leave Session",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/close-box-outline.svg",
+					"light": "assets/icons/light/close-box-outline.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.manage",
+				"title": "Manage Session...",
+				"category": "CodeTogether Live"
+			},
+			{
+				"command": "com.genuitec.codetogether.invite",
+				"title": "Copy Invite URL",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/clipboard-outline.svg",
+					"light": "assets/icons/light/clipboard-outline.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.logout",
+				"title": "Log out",
+				"category": "CodeTogether Live",
+				"icon": {
+					"light": "assets/light/logout.svg",
+					"dark": "assets/dark/logout.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.login",
+				"title": "Log in",
+				"category": "CodeTogether Live",
+				"icon": {
+					"light": "assets/light/login.svg",
+					"dark": "assets/dark/login.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.room",
+				"title": "Join Cursor",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/inbox-arrow-down.svg",
+					"light": "assets/icons/light/inbox-arrow-down.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.forceFollow",
+				"title": "Force Follow",
+				"category": "CodeTogether Live"
+			},
+			{
+				"command": "com.genuitec.codetogether.followOther",
+				"title": "Follow Other",
+				"category": "CodeTogether Live"
+			},
+			{
+				"command": "com.genuitec.codetogether.open.terminal",
+				"title": "Open Terminal",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/ios-eye.svg",
+					"light": "assets/icons/light/ios-eye.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.write.terminal",
+				"title": "Request Write Access",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/file-document.svg",
+					"light": "assets/icons/light/file-document.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.share.terminal",
+				"title": "Share Terminal",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/external-link-alt.svg",
+					"light": "assets/icons/light/external-link-alt.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.unshare.terminal",
+				"title": "Unshare Terminal",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/close.svg",
+					"light": "assets/icons/light/close.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.room.codeAlone",
+				"title": "Go to Your Own Cursor",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/fork-repo.svg",
+					"light": "assets/icons/light/fork-repo.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.room.viewRoomLocation",
+				"title": "View Cursor Location",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/ios-eye.svg",
+					"light": "assets/icons/light/ios-eye.svg"
+				}
+			},
+			{
+				"command": "codetogether.openFile",
+				"title": "Open Modified File",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/file-document.svg",
+					"light": "assets/icons/light/file-document.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.session.openSessionInBrowser",
+				"title": "Try in Local Browser",
+				"category": "CodeTogether Live",
+				"icon": {
+					"dark": "assets/icons/dark/external-link-alt.svg",
+					"light": "assets/icons/light/external-link-alt.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.session.join",
+				"category": "CodeTogether Live",
+				"title": "Join Remote Session"
+			},
+			{
+				"command": "com.genuitec.codetogether.clean.authorization",
+				"category": "CodeTogether Live",
+				"title": "Forget Authorized Devices"
+			},
+			{
+				"command": "com.genuitec.codetogether.team.session.join",
+				"category": "CodeTogether Live",
+				"title": "Join Session",
+				"icon": {
+					"dark": "assets/icons/dark/inbox-arrow-down.svg",
+					"light": "assets/icons/light/inbox-arrow-down.svg"
+				}
+			},
+			{
+				"command": "codetogether.team.joinCreate",
+				"category": "CodeTogether Live",
+				"title": "Join/Create New Team",
+				"icon": {
+					"dark": "assets/icons/dark/plus.svg",
+					"light": "assets/icons/light/plus.svg"
+				},
+				"enablement": "codetogether.state.privateDeployment"
+			},
+			{
+				"command": "codetogether.team.leaveTeam",
+				"category": "CodeTogether Live",
+				"title": "Leave Team",
+				"icon": {
+					"dark": "assets/icons/dark/close-box-outline.svg",
+					"light": "assets/icons/light/close-box-outline.svg"
+				},
+				"enablement": "codetogether.state.privateDeployment"
+			},
+			{
+				"command": "codetogether.team.copyTeamCodeToClipboard",
+				"category": "CodeTogether Live",
+				"title": "Copy Team Code to Clipboard",
+				"icon": {
+					"dark": "assets/icons/dark/clipboard-outline.svg",
+					"light": "assets/icons/light/clipboard-outline.svg"
+				},
+				"enablement": "codetogether.state.privateDeployment"
+			},
+			{
+				"command": "codetogether.team.manageTeam",
+				"category": "CodeTogether Live",
+				"title": "Manage Team Members",
+				"icon": {
+					"dark": "assets/icons/dark/people.svg",
+					"light": "assets/icons/light/people.svg"
+				}
+			},
+			{
+				"command": "codetogether.team.renewTeam",
+				"category": "CodeTogether Live",
+				"title": "Review Payment Options",
+				"icon": {
+					"dark": "assets/icons/dark/cart.svg",
+					"light": "assets/icons/light/cart.svg"
+				}
+			},
+			{
+				"command": "codetogether.team.inviteMultiple",
+				"category": "CodeTogether Live",
+				"title": "Invite Team Members",
+				"icon": {
+					"dark": "assets/icons/dark/user-plus-solid.svg",
+					"light": "assets/icons/light/user-plus-solid.svg"
+				}
+			},
+			{
+				"command": "codetogether.team.inviteSingle",
+				"category": "CodeTogether Live",
+				"title": "Invite to Session",
+				"enablement": "codetogether.session.active",
+				"icon": {
+					"dark": "assets/icons/dark/user-plus-solid.svg",
+					"light": "assets/icons/light/user-plus-solid.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.team.goonline",
+				"title": "Go Online",
+				"category": "CodeTogether Live",
+				"icon": {
+					"light": "assets/light/login.svg",
+					"dark": "assets/dark/login.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.team.gooffline",
+				"title": "Go Offline",
+				"category": "CodeTogether Live",
+				"icon": {
+					"light": "assets/light/logout.svg",
+					"dark": "assets/dark/logout.svg"
+				}
+			},
+			{
+				"command": "codetogether.openSettings",
+				"category": "CodeTogether Live",
+				"title": "Open Settings",
+				"when": "false",
+				"icon": {
+					"dark": "assets/icons/dark/gear.svg",
+					"light": "assets/icons/light/gear.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.team.requestSession",
+				"category": "CodeTogether Live",
+				"title": "Ask to Host a Session",
+				"icon": {
+					"dark": "assets/icons/dark/play.svg",
+					"light": "assets/icons/light/play.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.team.sso.authenticate",
+				"category": "CodeTogether Live",
+				"title": "SSO Authentication"
+			},
+			{
+				"command": "com.genuitec.codetogether.abap.activate",
+				"title": "Activate current object (will also save if dirty)",
+				"icon": {
+					"dark": "assets/icons/activate_single.svg",
+					"light": "assets/icons/activate_single.svg"
+				}
+			},
+			{
+				"command": "codetogether.session.cancel.reconnect",
+				"category": "CodeTogether Live",
+				"title": "Cancel Reconnect"
+			},
+			{
+				"command": "codetogether.portForwarding.port.refresh",
+				"title": "Refresh Servers",
+				"icon": {
+					"dark": "assets/icons/dark/refresh.svg",
+					"light": "assets/icons/light/refresh.svg"
+				}
+			},
+			{
+				"command": "codetogether.proposedApis.promptToEnable",
+				"title": "Enable Proposed APIs",
+				"category": "CodeTogether Live",
+				"icon": "$(info)"
+			},
+			{
+				"command": "codetogether.av.join",
+				"category": "CodeTogether Live",
+				"title": "Join Audio for CodeTogether",
+				"enablement": "codetogether.av.join && !codetogether.av.join.active",
+				"icon": {
+					"dark": "assets/icons/dark/headphones-join.svg",
+					"light": "assets/icons/light/headphones-join.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.join.active",
+				"category": "CodeTogether Live",
+				"title": "Join Audio (Others Talking)",
+				"enablement": "codetogether.av.join && codetogether.av.join.active",
+				"icon": {
+					"dark": "assets/icons/dark/headphones-active.svg",
+					"light": "assets/icons/light/headphones-active.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.mic.mute",
+				"category": "CodeTogether Live",
+				"title": "Mute Your Microphone",
+				"enablement": "codetogether.av.on && codetogether.av.audio.available && codetogether.av.audio",
+				"icon": {
+					"dark": "assets/icons/dark/audio-on.svg",
+					"light": "assets/icons/light/audio-on.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.mic.unmute",
+				"category": "CodeTogether Live",
+				"title": "Unmute Your Microphone",
+				"enablement": "codetogether.av.on && codetogether.av.audio.available && !codetogether.av.audio",
+				"icon": {
+					"dark": "assets/icons/dark/audio-off.svg",
+					"light": "assets/icons/light/audio-off.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.camera.off",
+				"category": "CodeTogether Live",
+				"title": "Stop Sharing Camera",
+				"enablement": "codetogether.av.on && codetogether.av.camera.available && codetogether.av.camera",
+				"icon": {
+					"dark": "assets/icons/dark/camera-on.svg",
+					"light": "assets/icons/light/camera-on.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.camera.on",
+				"category": "CodeTogether Live",
+				"title": "Start Sharing Camera",
+				"enablement": "codetogether.av.on && codetogether.av.camera.available && codetogether.av.camera",
+				"icon": {
+					"dark": "assets/icons/dark/camera-off.svg",
+					"light": "assets/icons/light/camera-off.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.screenshare.off",
+				"category": "CodeTogether Live",
+				"title": "Stop Sharing Screen",
+				"enablement": "codetogether.av.on && codetogether.av.screenshare",
+				"icon": {
+					"dark": "assets/icons/dark/screenshare-on.svg",
+					"light": "assets/icons/light/screenshare-on.svg"
+				}
+			},
+			{
+				"command": "codetogether.av.chat",
+				"category": "CodeTogether Live",
+				"title": "You have unread messages in browser",
+				"enablement": "codetogether.av.on && codetogether.av.chat.unread",
+				"icon": {
+					"dark": "assets/icons/dark/chat-unread.svg",
+					"light": "assets/icons/light/chat-unread.svg"
+				}
+			},
+			{
+				"command": "codetogether.add.ignore.file",
+				"category": "CodeTogether Live",
+				"title": "Add to CodeTogether Ignore"
+			},
+			{
+				"command": "com.genuitec.codetogether.renewPro",
+				"category": "CodeTogether Live",
+				"title": "Renew Pro"
+			},
+			{
+				"command": "com.genuitec.codetogether.cursor.editor.state.watching",
+				"title": "Following",
+				"icon": {
+					"dark": "assets/icons/dark/people-circle-watching.svg",
+					"light": "assets/icons/light/people-circle-watching.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.cursor.editor.state.waiting",
+				"title": "Waiting for others",
+				"icon": {
+					"dark": "assets/icons/dark/person-circle-waiting.svg",
+					"light": "assets/icons/light/person-circle-waiting.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.cursor.editor.state.alone",
+				"title": "Alone",
+				"icon": {
+					"dark": "assets/icons/dark/person-circle-alone.svg",
+					"light": "assets/icons/light/person-circle-alone.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.cursor.editor.state.pseudo.alone",
+				"title": "Pseudo Alone",
+				"icon": {
+					"dark": "assets/icons/dark/people-circle-pseudo.svg",
+					"light": "assets/icons/light/people-circle-pseudo.svg"
+				}
+			},
+			{
+				"command": "com.genuitec.codetogether.cursor.editor.state.together",
+				"title": "Driving",
+				"icon": {
+					"dark": "assets/icons/dark/people-circle-driving.svg",
+					"light": "assets/icons/light/people-circle-driving.svg"
+				}
+			},
+			{
+				"command": "codetogether.saas.refresh.user",
+				"category": "CodeTogether Live",
+				"title": "CodeTogether refresh user",
+				"icon": {
+					"dark": "assets/icons/dark/refresh-small.svg",
+					"light": "assets/icons/light/refresh-small.svg"
+				}
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "com.genuitec.codetogether.session.start",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == false && codetogether.state.ready && codetogether.state.privateDeployment == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.start",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == false && codetogether.state.ready && codetogether.state.privateDeployment && codetogether.team.connection.status =~ /^(?!(^disconnected|connecting|ssoauthenticationrequired)$).*$/"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.end",
+					"when": "codetogether.session.active == true && codetogether.session.anotherParticipant == false && codetogether.state.socketTimeout == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.manage",
+					"when": "codetogether.session.active == true"
+				},
+				{
+					"command": "com.genuitec.codetogether.logout",
+					"when": "codetogether.state.loggedIn == true && codetogether.state.privateDeployment == false && codetogether.session.active == false && codetogether.session.anotherParticipant == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.logout",
+					"when": "codetogether.state.loggedIn == true && codetogether.state.privateDeployment == true"
+				},
+				{
+					"command": "com.genuitec.codetogether.login",
+					"when": "codetogether.state.privateDeployment == false && codetogether.session.active == false && codetogether.state.loggedIn == false && codetogether.session.anotherParticipant == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.login",
+					"when": "codetogether.state.privateDeployment == true && codetogether.session.ssoAuthUrl && codetogether.state.loggedIn == false && codetogether.session.anotherParticipant == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.invite",
+					"when": "codetogether.session.active == true"
+				},
+				{
+					"command": "com.genuitec.codetogether.room",
+					"when": "codetogehterRoomActive == true"
+				},
+				{
+					"command": "com.genuitec.codetogether.forceFollow",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.followOther",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.open.terminal",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.write.terminal",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.share.terminal",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.unshare.terminal",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.join",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == false && codetogether.state.privateDeployment == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.join",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == false && codetogether.state.privateDeployment && codetogether.team.connection.status =~ /^(?!(^disconnected|connecting|ssoauthenticationrequired)$).*$/"
+				},
+				{
+					"command": "codetogether.team.joinCreate",
+					"when": "codetogether.team.connection.status =~ /^(?!(^disconnected|connecting|ssoauthenticationrequired)$).*$/"
+				},
+				{
+					"command": "com.genuitec.codetogether.room.codeAlone",
+					"when": "codetogether.session.active == true && codetogether.state.isCodingAlone == false"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.openSessionInBrowser",
+					"when": "codetogether.session.active == true"
+				},
+				{
+					"command": "com.genuitec.codetogether.room.viewRoomLocation",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.openFile",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.leave",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == true"
+				},
+				{
+					"command": "codetogether.team.leaveTeam",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.team.copyTeamCodeToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.team.manageTeam",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.team.renewTeam",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.team.inviteMultiple",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.goonline",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.gooffline",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.session.join",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.requestSession",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.sso.authenticate",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.team.inviteSingle",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.abap.activate",
+					"when": "codetogether.session.anotherParticipant == true && codetogether.abap.canActivate"
+				},
+				{
+					"command": "codetogether.portForwarding.port.addManual",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.portForwarding.port.share",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.portForwarding.port.stopSharing",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.portForwarding.port.disconnectFromSharedPort",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.portForwarding.port.connectToSharedPort",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.portForwarding.port.removeManual",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.team.showTeamUpsellNotification",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.session.cancel.reconnect",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.portForwarding.port.refresh",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.proposedApis.promptToEnable",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.add.ignore.file",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.av.join",
+					"when": "codetogether.av.join && !codetogether.av.join.active"
+				},
+				{
+					"command": "codetogether.av.join.active",
+					"when": "codetogether.av.join && codetogether.av.join.active"
+				},
+				{
+					"command": "codetogether.av.mic.mute",
+					"when": "codetogether.av.on && codetogether.av.audio.available && codetogether.av.audio"
+				},
+				{
+					"command": "codetogether.av.mic.unmute",
+					"when": "codetogether.av.on && codetogether.av.audio.available && !codetogether.av.audio"
+				},
+				{
+					"command": "codetogether.av.camera.off",
+					"when": "codetogether.av.on && codetogether.av.camera.available && codetogether.av.camera"
+				},
+				{
+					"command": "codetogether.av.camera.on",
+					"when": "codetogether.av.on && codetogether.av.camera.available && codetogether.av.camera"
+				},
+				{
+					"command": "codetogether.av.screenshare.off",
+					"when": "codetogether.av.on && codetogether.av.screenshare"
+				},
+				{
+					"command": "codetogether.av.chat",
+					"when": "codetogether.av.on && codetogether.av.chat.unread"
+				},
+				{
+					"command": "com.genuitec.codetogether.renewPro",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.waiting",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.alone",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.together",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.watching",
+					"when": "false"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.pseudo.alone",
+					"when": "false"
+				},
+				{
+					"command": "codetogether.saas.refresh.user",
+					"when": "false"
+				}
+			],
+			"view/title": [
+				{
+					"command": "com.genuitec.codetogether.session.end",
+					"when": "view =~ /com\\.genuitec\\.codetogether\\.presence\\.(treeview|webview)/ && codetogether.session.active == true && codetogether.state.socketTimeout == false",
+					"group": "navigation"
+				},
+				{
+					"command": "com.genuitec.codetogether.login",
+					"when": "view =~ /com\\.genuitec\\.codetogether\\.presence\\.(treeview|webview)/ && !codetogether.state.privateDeployment && codetogether.state.loggedIn == false && codetogether.session.anotherParticipant == false",
+					"group": "navigation"
+				},
+				{
+					"command": "com.genuitec.codetogether.logout",
+					"when": "view == com.genuitec.codetogether.team.treeview && codetogether.state.loggedIn == true",
+					"group": "navigation"
+				},
+				{
+					"command": "com.genuitec.codetogether.logout",
+					"when": "view =~ /com\\.genuitec\\.codetogether\\.presence\\.(treeview|webview)/ && !codetogether.state.privateDeployment && codetogether.state.loggedIn == true && codetogetherParticipantSession == false",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "codetogether.portForwarding.port.refresh",
+					"when": "viewItem == ct.sharedPorts && !codetogether.session.anotherParticipant",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.portForwarding.port.addManual",
+					"when": "viewItem == ct.sharedPorts && !codetogether.session.anotherParticipant",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.portForwarding.port.share",
+					"when": "viewItem =~ /^activePort/ && codetogether.state.privateDeployment",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.portForwarding.port.share",
+					"when": "viewItem =~ /^activePort/ && !codetogether.state.privateDeployment && codetogether.team.hasActiveTeams",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.portForwarding.port.removeManual",
+					"when": "viewItem =~ /(activePort|inactivePort)-manual/",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.portForwarding.port.stopSharing",
+					"when": "viewItem =~ /^sharedPort/",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.portForwarding.port.disconnectFromSharedPort",
+					"when": "viewItem == participantConnectedPort",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.portForwarding.port.connectToSharedPort",
+					"when": "viewItem == participantDisconnectedPort",
+					"group": "inline@1"
+				},
+				{
+					"command": "com.genuitec.codetogether.invite",
+					"when": "viewItem =~ /action-inviteOthers/ || viewItem == sessionContainer || viewItem == participantSessionContainer",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.team.inviteMultiple",
+					"when": "codetogether.team.connection.status == connected && viewItem =~ /action-inviteMultiple/ && codetogether.team.hasActiveTeams == true",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.team.inviteMultiple",
+					"when": "codetogether.team.connection.status == connected && viewItem == sessionContainer && codetogether.team.hasActiveTeams == true",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.team.inviteMultiple",
+					"when": "codetogether.team.connection.status == connected && viewItem == participantSessionContainer && codetogether.team.hasActiveTeams == true",
+					"group": "inline@1"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.end",
+					"when": "viewItem =~ /action-stopSharing/ || viewItem == sessionContainer",
+					"group": "inline@3"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.leave",
+					"when": "viewItem =~ /action-leaveSession/ || viewItem == participantSessionContainer",
+					"group": "inline@2"
+				},
+				{
+					"command": "com.genuitec.codetogether.room.viewRoomLocation",
+					"when": "viewItem == codingRoom",
+					"group": "inline@2"
+				},
+				{
+					"command": "com.genuitec.codetogether.session.openSessionInBrowser",
+					"when": "viewItem =~ /action-openSessionInBrowser/",
+					"group": "inline"
+				},
+				{
+					"command": "com.genuitec.codetogether.room.codeAlone",
+					"when": "viewItem =~ /action-goToNewRoom/",
+					"group": "inline"
+				},
+				{
+					"command": "com.genuitec.codetogether.room",
+					"when": "viewItem == codingRoom",
+					"group": "inline@1"
+				},
+				{
+					"command": "com.genuitec.codetogether.open.terminal",
+					"when": "viewItem == terminal-read-only || viewItem == terminal-read-write || viewItem == terminal-shared || viewItem == terminal-not-shared",
+					"group": "inline@1"
+				},
+				{
+					"command": "com.genuitec.codetogether.write.terminal",
+					"when": "viewItem == terminal-read-only",
+					"group": "inline@2"
+				},
+				{
+					"command": "com.genuitec.codetogether.share.terminal",
+					"when": "viewItem == terminal-not-shared",
+					"group": "inline@2"
+				},
+				{
+					"command": "com.genuitec.codetogether.unshare.terminal",
+					"when": "viewItem == terminal-shared",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.openFile",
+					"when": "viewItem == modifiedFile",
+					"group": "inline"
+				},
+				{
+					"command": "codetogether.team.leaveTeam",
+					"when": "viewItem == team",
+					"group": "inline@2"
+				},
+				{
+					"command": "codetogether.team.copyTeamCodeToClipboard",
+					"when": "viewItem == team",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.team.manageTeam",
+					"when": "viewItem == teamManage",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.saas.refresh.user",
+					"when": "viewItem =~ /action-refreshAccess/",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.team.renewTeam",
+					"when": "viewItem == alertRenew",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.team.inviteSingle",
+					"when": "viewItem == user && codetogether.session.active",
+					"group": "inline@1"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.requestSession",
+					"when": "viewItem == user",
+					"group": "inline@1"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.gooffline",
+					"when": "viewItem == openSettings && codetogether.team.connection.status == connected",
+					"group": "inline"
+				},
+				{
+					"command": "codetogether.openSettings",
+					"when": "viewItem == openSettings",
+					"group": "inline"
+				},
+				{
+					"command": "codetogether.team.joinCreate",
+					"when": "viewItem =~ /joinCreateTeam/",
+					"group": "inline"
+				},
+				{
+					"command": "com.genuitec.codetogether.team.session.join",
+					"when": "viewItem == activeIDE",
+					"group": "inline"
+				},
+				{
+					"command": "codetogether.team.showTeamUpsellNotification",
+					"when": "viewItem =~ /action-showUpsellNotification/",
+					"group": "inline@1"
+				},
+				{
+					"command": "codetogether.proposedApis.promptToEnable",
+					"when": "viewItem == ct.activateProposedAPIs",
+					"group": "inline@1"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.waiting",
+					"group": "navigation@1",
+					"when": "codetogether.session.active == true && codetogether.cursor.editor.state == waiting-for-others"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.alone",
+					"group": "navigation@2",
+					"when": "codetogether.session.active == true && codetogether.cursor.editor.state == alone"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.together",
+					"group": "navigation@3",
+					"when": "codetogether.session.active == true && codetogether.cursor.editor.state == driving"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.watching",
+					"group": "navigation@4",
+					"when": "codetogether.session.active == true && codetogether.cursor.editor.state == watching"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.pseudo.alone",
+					"group": "navigation@5",
+					"when": "codetogether.session.active == true && codetogether.cursor.editor.state == pseudo-alone"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.waiting",
+					"group": "navigation@6",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == true && codetogether.cursor.editor.state == waiting-for-others"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.alone",
+					"group": "navigation@7",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == true && codetogether.cursor.editor.state == alone"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.together",
+					"group": "navigation@8",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == true && codetogether.cursor.editor.state == driving"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.watching",
+					"group": "navigation@9",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == true && codetogether.cursor.editor.state == watching"
+				},
+				{
+					"command": "com.genuitec.codetogether.cursor.editor.state.pseudo.alone",
+					"group": "navigation@10",
+					"when": "codetogether.session.active == false && codetogether.session.anotherParticipant == true && codetogether.cursor.editor.state == pseudo-alone"
+				},
+				{
+					"command": "codetogether.av.join",
+					"group": "navigation@11",
+					"when": "codetogether.av.join && !codetogether.av.join.active"
+				},
+				{
+					"command": "codetogether.av.join.active",
+					"group": "navigation@12",
+					"when": "codetogether.av.join && codetogether.av.join.active"
+				},
+				{
+					"command": "codetogether.av.mic.mute",
+					"group": "navigation@13",
+					"when": "codetogether.av.on && codetogether.av.audio.available && codetogether.av.audio"
+				},
+				{
+					"command": "codetogether.av.mic.unmute",
+					"group": "navigation@14",
+					"when": "codetogether.av.on && codetogether.av.audio.available && !codetogether.av.audio"
+				},
+				{
+					"command": "codetogether.av.camera.off",
+					"group": "navigation@15",
+					"when": "codetogether.av.on && codetogether.av.camera.available && codetogether.av.camera"
+				},
+				{
+					"command": "codetogether.av.camera.on",
+					"group": "navigation@16",
+					"when": "codetogether.av.on && codetogether.av.camera.available && !codetogether.av.camera"
+				},
+				{
+					"command": "codetogether.av.screenshare.off",
+					"group": "navigation@17",
+					"when": "codetogether.av.on && codetogether.av.screenshare"
+				},
+				{
+					"command": "codetogether.av.chat",
+					"group": "navigation@18",
+					"when": "codetogether.av.on && codetogether.av.chat.unread"
+				},
+				{
+					"command": "com.genuitec.codetogether.abap.activate",
+					"group": "navigation@19",
+					"when": "codetogether.session.anotherParticipant == true && codetogether.abap.canActivate"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "codetogether.add.ignore.file",
+					"when": "codetogether.host.mode == true && !codetogether.session.active"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "CodeTogether Live Session Unavailable\n\n\nConnection has been lost to the CodeTogether Live server.",
+				"when": "codetogether.welcomeViews.session == sessionUnavailableConnectionLost"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "Welcome to CodeTogether Live!\n\n\nPlease wait while VS Code starts up the CodeTogether Live extension.\n\n\nExtension is starting...",
+				"when": "codetogether.welcomeViews.session == extensionStarting"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "Welcome to CodeTogether Live!\n\n\n[ Host New Session ](command:com.genuitec.codetogether.session.start)\nHost and invite others to securely code in this IDE from their browser, or their own IDE.\n\n\n To join a session, either use the Teams area below or join [by invite URL](command:com.genuitec.codetogether.session.join) to start collaborating from inside a new IDE window.\n\n\n\n Source is end-to-end encrypted.",
+				"when": "codetogether.welcomeViews.session == saasReady || codetogether.welcomeViews.session == onPremiseNoLogin"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "Welcome to CodeTogether Live!\n\n\n[ Host New Session ](command:com.genuitec.codetogether.session.start)\nHost and invite others to securely code in this IDE from their browser, or their own IDE.\n\n\n [ Join Remote Session ](command:com.genuitec.codetogether.session.join)\nConnect to a remote session to start collaborating from inside a new IDE window.\n\n\n\n Source is end-to-end encrypted.",
+				"when": "codetogether.welcomeViews.session == saasNoTeams || codetogether.welcomeViews.session == noSessionLogin"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "Reconnecting to CodeTogether Live\n\n\nThe connection was lost to the CodeTogether Live backend. Attempts will be made for up to 1 minute to reestablish the session connectivity.\n\n\n [ Disconnect ](command:codetogether.session.cancel.reconnect)",
+				"when": "codetogether.welcomeViews.session == reconnecting"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "Welcome to CodeTogether Live!\n\n\n[ Host New Session ](command:com.genuitec.codetogether.session.start)\nHost and invite others to securely code in this IDE from their browser, or their own IDE.\n\n\n [ Join Remote Session ](command:com.genuitec.codetogether.session.join)\nConnect to a remote session to start collaborating from inside a new IDE window.\n\n\n\n Source is end-to-end encrypted.\n\n You are using CodeTogether Live anonymously. [Log in](command:com.genuitec.codetogether.login)",
+				"when": "codetogether.welcomeViews.session == noSessionNoLogin || codetogether.welcomeViews.session == noSessionSocketTimeOutLogin"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "Extension is starting...",
+				"when": "codetogether.welcomeViews.teams == extensionStarting"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "Connecting to your CodeTogether Live Teams server...",
+				"when": "codetogether.welcomeViews.teams == onPremiseDisconnected"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "[Get Pro](https://www.codetogether.com/oZOd/buy-pro/) to increase guests & remove time limits. [Recheck Access](command:codetogether.saas.refresh.user) if you have already purchased.\n\n\n[Start a Team](https://www.codetogether.com/oZOd/team/start) for more functionality like write-access to terminals, server sharing, and streamlined session access to peers.",
+				"when": "codetogether.welcomeViews.teams == saasDisconnectedLoggedInNotPro"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "You are a CodeTogether Live Pro with no session time limit when hosting.\n\n\nYou can [Start a Team](https://www.codetogether.com/oZOd/team/start) now for more functionality including write-access to terminals, server sharing, and streamlined session access to peers.",
+				"when": "codetogether.welcomeViews.teams == saasDisconnectedLoggedInActivePro"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "Your CodeTogether Live Pro access has expired; [renew now](command:com.genuitec.codetogether.renewPro) to remove session limits. [Recheck Access](command:codetogether.saas.refresh.user) if you have already purchased.\n\n\nAlternatively [Start a Team](https://www.codetogether.com/oZOd/team/start) now for more functionality like write-access to terminals, server sharing, and streamlined session access to peers.",
+				"when": "codetogether.welcomeViews.teams == saasDisconnectedLoggedInExpiredPro"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "Have a Teams or Pro account? [Log in](command:com.genuitec.codetogether.login)\n\n\n[Get Pro](https://www.codetogether.com/oZOd/buy-pro/) to increase guests & remove time limits.\n\n\n[Start a Team](https://www.codetogether.com/oZOd/team/start) for more functionality like write-access to terminals, server sharing, and streamlined session access to peers.",
+				"when": "codetogether.welcomeViews.teams == saasDisconnectedNotLoggedIn"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "Network issue detected trying to connect to the CodeTogether Live server. Check network connectivity.\n\n\nReconnecting...\n\n\n[Disconnect](command:com.genuitec.codetogether.team.gooffline)",
+				"when": "codetogether.welcomeViews.teams == networkIssue"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "The CodeTogether Live session you were connected to has ended.",
+				"when": "codetogether.welcomeViews.teams == teamsOfflineParticipantSessionEnded"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "CodeTogether Live Teams Offline\n\n\nYou have disconnected from the CodeTogether Live Teams server. You will not have access to active sessions or be available for invitations to CodeTogether Live.\n\n\n[Reconnect Now](command:com.genuitec.codetogether.team.goonline)",
+				"when": "codetogether.welcomeViews.teams == teamsOfflineParticipantOnSession"
+			},
+			{
+				"view": "com.genuitec.codetogether.team.treeview",
+				"contents": "You must first authenticate with your organization's single sign-on service to access the Teams management console.",
+				"when": "codetogether.welcomeViews.teams == ssoAuthRequired"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "Welcome to CodeTogether Live!\n\n\nTo continue using CodeTogether Live, you must first authenticate with your organization's single sign-on service.\n\n[ Connect ](command:com.genuitec.codetogether.team.sso.authenticate)",
+				"when": "codetogether.welcomeViews.session == ssoAuthRequired"
+			},
+			{
+				"view": "com.genuitec.codetogether.presence.treeview",
+				"contents": "CodeTogether Live Session Ended\n\n\nThe CodeTogether Live session you were connected to has ended. You can now close this window",
+				"when": "codetogether.welcomeViews.session == participantSessionEnded"
+			}
+		],
+		"languages": [
+			{
+				"id": "ct-plaintext",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Plain Text",
+					"CodeTogether text"
+				],
+				"mimetypes": [],
+				"filenames": []
+			},
+			{
+				"id": "ct-jsonc",
+				"aliases": [
+					"CodeTogether JSON with Comments"
+				],
+				"filenames": [],
+				"configuration": "./language-configurations/ct-jsonc-1-language-configuration.json",
+				"extensions": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-bat",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Batch",
+					"CodeTogether bat"
+				],
+				"configuration": "./language-configurations/ct-bat-2-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-clojure",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Clojure",
+					"CodeTogether clojure"
+				],
+				"configuration": "./language-configurations/ct-clojure-3-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-coffeescript",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Coffeescript",
+					"CodeTogether coffeescript"
+				],
+				"configuration": "./language-configurations/ct-coffeescript-4-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-csharp",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether CSharp",
+					"CodeTogether C#",
+					"CodeTogether csharp"
+				],
+				"configuration": "./language-configurations/ct-csharp-5-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-css",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether CSS",
+					"CodeTogether css"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-css-6-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-fsharp",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether F#",
+					"CodeTogether FSharp",
+					"CodeTogether fsharp"
+				],
+				"configuration": "./language-configurations/ct-fsharp-7-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-groovy",
+				"aliases": [
+					"CodeTogether Groovy",
+					"CodeTogether groovy"
+				],
+				"extensions": [],
+				"filenames": [],
+				"firstLine": "^#!.*\\bgroovy\\b",
+				"configuration": "./language-configurations/ct-groovy-8-language-configuration.json",
+				"mimetypes": []
+			},
+			{
+				"id": "ct-handlebars",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Handlebars",
+					"CodeTogether handlebars"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-handlebars-9-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-hlsl",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether HLSL",
+					"CodeTogether hlsl"
+				],
+				"configuration": "./language-configurations/ct-hlsl-10-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-ini",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether INI",
+					"CodeTogether ini",
+					"CodeTogether properties",
+					"CodeTogether toml"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-ini-11-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-log",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether log"
+				],
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-lua",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Lua",
+					"CodeTogether lua"
+				],
+				"configuration": "./language-configurations/ct-lua-13-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-makefile",
+				"aliases": [
+					"CodeTogether Makefile",
+					"CodeTogether makefile"
+				],
+				"extensions": [],
+				"filenames": [],
+				"firstLine": "^#!\\s*/usr/bin/make",
+				"configuration": "./language-configurations/ct-makefile-14-language-configuration.json",
+				"mimetypes": []
+			},
+			{
+				"id": "ct-objective-c",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Objective-C"
+				],
+				"configuration": "./language-configurations/ct-objective-c-15-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-perl",
+				"aliases": [
+					"CodeTogether Perl",
+					"CodeTogether perl"
+				],
+				"extensions": [],
+				"firstLine": "^#!.*\\bperl\\b",
+				"configuration": "./language-configurations/ct-perl-16-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-powershell",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether PowerShell",
+					"CodeTogether powershell",
+					"CodeTogether ps",
+					"CodeTogether ps1"
+				],
+				"firstLine": "^#!\\s*/.*\\bpwsh\\b",
+				"configuration": "./language-configurations/ct-powershell-17-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-jade",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Pug",
+					"CodeTogether Jade",
+					"CodeTogether jade"
+				],
+				"configuration": "./language-configurations/ct-jade-18-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-r",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether R",
+					"CodeTogether r"
+				],
+				"configuration": "./language-configurations/ct-r-19-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-razor",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Razor",
+					"CodeTogether razor"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-razor-20-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-shaderlab",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether ShaderLab",
+					"CodeTogether shaderlab"
+				],
+				"configuration": "./language-configurations/ct-shaderlab-21-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-sql",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether SQL"
+				],
+				"configuration": "./language-configurations/ct-sql-22-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-swift",
+				"aliases": [
+					"CodeTogether Swift",
+					"CodeTogether swift"
+				],
+				"extensions": [],
+				"configuration": "./language-configurations/ct-swift-23-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-vb",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Visual Basic",
+					"CodeTogether vb"
+				],
+				"configuration": "./language-configurations/ct-vb-24-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-html",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether HTML",
+					"CodeTogether htm",
+					"CodeTogether html",
+					"CodeTogether xhtml"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-html-25-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-jsp",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Java Server Pages",
+					"CodeTogether jsp",
+					"CodeTogether JSP",
+					"CodeTogether jstl",
+					"CodeTogether JSTL"
+				],
+				"configuration": "./language-configurations/ct-jsp-26-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-less",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Less",
+					"CodeTogether less"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-less-27-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-scss",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Scss",
+					"CodeTogether scss"
+				],
+				"configuration": "./language-configurations/ct-scss-28-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-markdown",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Markdown",
+					"CodeTogether markdown"
+				],
+				"configuration": "./language-configurations/ct-markdown-29-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-shell",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Shell",
+					"CodeTogether sh"
+				],
+				"configuration": "./language-configurations/ct-shell-30-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-tcl",
+				"aliases": [
+					"CodeTogether TCL",
+					"CodeTogether tcl",
+					"CodeTogether Tcl"
+				],
+				"extensions": [],
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-xml",
+				"extensions": [],
+				"firstLine": "(\\<\\?xml.*)|(\\<svg)|(\\<\\!doctype\\s+svg)",
+				"aliases": [
+					"CodeTogether XML",
+					"CodeTogether xml"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-xml-32-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-xsl",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether XSL",
+					"CodeTogether xsl"
+				],
+				"configuration": "./language-configurations/ct-xsl-33-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-java",
+				"extensions": [],
+				"firstLine": "(\\<\\?xml.*)|(\\<svg)|(\\<\\!doctype\\s+svg)",
+				"aliases": [
+					"CodeTogether Java",
+					"CodeTogether java"
+				],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-java-34-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-typescript",
+				"aliases": [
+					"CodeTogether TypeScript",
+					"CodeTogether typescript",
+					"CodeTogether ts"
+				],
+				"extensions": [],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-typescript-35-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-typescriptreact",
+				"aliases": [
+					"CodeTogether TypeScript React",
+					"CodeTogether tsx"
+				],
+				"extensions": [],
+				"configuration": "./language-configurations/ct-typescriptreact-36-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-javascript",
+				"aliases": [
+					"CodeTogether JavaScript",
+					"CodeTogether javascript",
+					"CodeTogether js"
+				],
+				"extensions": [],
+				"filenames": [],
+				"firstLine": "^#!.*\\bnode",
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-javascript-37-language-configuration.json"
+			},
+			{
+				"id": "ct-javascriptreact",
+				"aliases": [
+					"CodeTogether JavaScript React",
+					"CodeTogether jsx"
+				],
+				"extensions": [],
+				"configuration": "./language-configurations/ct-javascriptreact-38-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-jsx-tags",
+				"configuration": "./language-configurations/ct-jsx-tags-39-language-configuration.json",
+				"extensions": [],
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-python",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Python",
+					"CodeTogether py"
+				],
+				"firstLine": "^#!\\s*/.*\\bpython[0-9.-]*\\b",
+				"configuration": "./language-configurations/ct-python-40-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-go",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Go",
+					"CodeTogether go"
+				],
+				"configuration": "./language-configurations/ct-go-41-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-rust",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Rust",
+					"CodeTogether rust"
+				],
+				"configuration": "./language-configurations/ct-rust-42-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-php",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether PHP",
+					"CodeTogether php"
+				],
+				"firstLine": "^#!\\s*/.*\\bphp\\b",
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-php-43-language-configuration.json",
+				"filenames": []
+			},
+			{
+				"id": "ct-c",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether C",
+					"CodeTogether c"
+				],
+				"configuration": "./language-configurations/ct-c-44-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-cpp",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether C++",
+					"CodeTogether Cpp",
+					"CodeTogether cpp"
+				],
+				"configuration": "./language-configurations/ct-cpp-45-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-json",
+				"aliases": [
+					"CodeTogether JSON",
+					"CodeTogether json"
+				],
+				"extensions": [],
+				"filenames": [],
+				"mimetypes": [],
+				"configuration": "./language-configurations/ct-json-46-language-configuration.json"
+			},
+			{
+				"id": "ct-kotlin",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether kotlin",
+					"CodeTogether Kotlin"
+				],
+				"configuration": "./language-configurations/ct-kotlin-47-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-vue",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether vue",
+					"CodeTogether Vue"
+				],
+				"configuration": "./language-configurations/ct-vue-48-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-scala",
+				"aliases": [
+					"CodeTogether Scala",
+					"CodeTogether scala"
+				],
+				"extensions": [],
+				"firstLine": "^#!/.*\\b\\w*scala\\b",
+				"configuration": "./language-configurations/ct-scala-49-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-twig",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether twig",
+					"CodeTogether Twig"
+				],
+				"configuration": "./language-configurations/ct-twig-50-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-Cobol",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Cobol",
+					"CodeTogether cobol"
+				],
+				"configuration": "./language-configurations/ct-Cobol-51-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-elixir",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Elixir",
+					"CodeTogether elixir"
+				],
+				"configuration": "./language-configurations/ct-elixir-52-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-dart",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Dart",
+					"CodeTogether dart"
+				],
+				"configuration": "./language-configurations/ct-dart-53-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-yaml",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether yaml",
+					"CodeTogether Yaml"
+				],
+				"configuration": "./language-configurations/ct-yaml-54-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-diff",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Diff",
+					"CodeTogether diff"
+				],
+				"configuration": "./language-configurations/ct-diff-55-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-docker",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Docker",
+					"CodeTogether docker"
+				],
+				"configuration": "./language-configurations/ct-docker-56-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-objective-cpp",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Objective-Cpp",
+					"CodeTogether Objective-C++"
+				],
+				"configuration": "./language-configurations/ct-objective-cpp-57-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-ruby",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Ruby",
+					"CodeTogether ruby"
+				],
+				"configuration": "./language-configurations/ct-ruby-58-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-abap",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether abap",
+					"CodeTogether Abap"
+				],
+				"configuration": "./language-configurations/ct-abap-59-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-latex",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether Latex",
+					"CodeTogether latex"
+				],
+				"configuration": "./language-configurations/ct-latex-60-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-bibtex",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether BibTex",
+					"CodeTogether bibtex"
+				],
+				"configuration": "./language-configurations/ct-bibtex-61-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			},
+			{
+				"id": "ct-abl",
+				"extensions": [],
+				"aliases": [
+					"CodeTogether ABL",
+					"CodeTogether abl"
+				],
+				"configuration": "./language-configurations/ct-abl-62-language-configuration.json",
+				"filenames": [],
+				"mimetypes": []
+			}
+		],
+		"grammars": [
+			{
+				"language": "ct-jsonc",
+				"scopeName": "ct-source.json.comments",
+				"path": "./language-grammar/ct-jsonc-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-bat",
+				"scopeName": "ct-source.batchfile",
+				"path": "./language-grammar/ct-bat-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-clojure",
+				"scopeName": "ct-source.clojure",
+				"path": "./language-grammar/ct-clojure-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-coffeescript",
+				"scopeName": "ct-source.coffee",
+				"path": "./language-grammar/ct-coffeescript-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-csharp",
+				"scopeName": "ct-source.cs",
+				"path": "./language-grammar/ct-csharp-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-css",
+				"scopeName": "ct-source.css",
+				"path": "./language-grammar/ct-css-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-fsharp",
+				"scopeName": "ct-source.fsharp",
+				"path": "./language-grammar/ct-fsharp-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-groovy",
+				"scopeName": "ct-source.groovy",
+				"path": "./language-grammar/ct-groovy-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-handlebars",
+				"scopeName": "ct-text.html.handlebars",
+				"path": "./language-grammar/ct-handlebars-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-hlsl",
+				"scopeName": "ct-source.hlsl",
+				"path": "./language-grammar/ct-hlsl-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-ini",
+				"scopeName": "ct-source.ini",
+				"path": "./language-grammar/ct-ini-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-log",
+				"scopeName": "ct-text.log",
+				"path": "./language-grammar/ct-log-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-lua",
+				"scopeName": "ct-source.lua",
+				"path": "./language-grammar/ct-lua-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-makefile",
+				"scopeName": "ct-source.makefile",
+				"path": "./language-grammar/ct-makefile-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-objective-c",
+				"scopeName": "ct-source.objc",
+				"path": "./language-grammar/ct-objective-c-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-perl",
+				"scopeName": "ct-source.perl",
+				"path": "./language-grammar/ct-perl-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-powershell",
+				"scopeName": "ct-source.powershell",
+				"path": "./language-grammar/ct-powershell-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-jade",
+				"scopeName": "ct-text.pug",
+				"path": "./language-grammar/ct-jade-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-r",
+				"scopeName": "ct-source.r",
+				"path": "./language-grammar/ct-r-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-razor",
+				"scopeName": "ct-text.html.cshtml",
+				"path": "./language-grammar/ct-razor-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-shaderlab",
+				"scopeName": "ct-source.shaderlab",
+				"path": "./language-grammar/ct-shaderlab-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-sql",
+				"scopeName": "ct-source.sql",
+				"path": "./language-grammar/ct-sql-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-swift",
+				"scopeName": "ct-source.swift",
+				"path": "./language-grammar/ct-swift-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-vb",
+				"scopeName": "ct-source.asp.vb.net",
+				"path": "./language-grammar/ct-vb-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-html",
+				"scopeName": "ct-text.html.basic",
+				"path": "./language-grammar/ct-html-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-jsp",
+				"scopeName": "ct-text.html.jsp",
+				"path": "./language-grammar/ct-jsp-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-less",
+				"scopeName": "ct-source.css.less",
+				"path": "./language-grammar/ct-less-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-scss",
+				"scopeName": "ct-source.css.scss",
+				"path": "./language-grammar/ct-scss-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-markdown",
+				"scopeName": "ct-text.html.markdown",
+				"path": "./language-grammar/ct-markdown-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-shell",
+				"scopeName": "ct-source.shell",
+				"path": "./language-grammar/ct-shell-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-tcl",
+				"scopeName": "ct-source.tcl",
+				"path": "./language-grammar/ct-tcl-0.plist"
+			},
+			{
+				"language": "ct-xml",
+				"scopeName": "ct-text.xml",
+				"path": "./language-grammar/ct-xml-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-xsl",
+				"scopeName": "ct-text.xml.xsl",
+				"path": "./language-grammar/ct-xsl-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-java",
+				"scopeName": "ct-source.java",
+				"path": "./language-grammar/ct-java-0.tmLanguage.json"
+			},
+			{
+				"scopeName": "ct-text.html.javadoc",
+				"path": "./language-grammar/ct-java-1.tmLanguage.json"
+			},
+			{
+				"language": "ct-typescript",
+				"scopeName": "ct-source.ts",
+				"path": "./language-grammar/ct-typescript-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-typescriptreact",
+				"scopeName": "ct-source.tsx",
+				"path": "./language-grammar/ct-typescriptreact-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-javascript",
+				"scopeName": "ct-source.js",
+				"path": "./language-grammar/ct-javascript-0.tmLanguage.json"
+			},
+			{
+				"scopeName": "ct-source.js.regexp",
+				"path": "./language-grammar/ct-javascript-1.plist"
+			},
+			{
+				"language": "ct-javascriptreact",
+				"scopeName": "ct-source.js.jsx",
+				"path": "./language-grammar/ct-javascriptreact-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-python",
+				"scopeName": "ct-source.python",
+				"path": "./language-grammar/ct-python-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-go",
+				"scopeName": "ct-source.go",
+				"path": "./language-grammar/ct-go-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-rust",
+				"scopeName": "ct-source.rust",
+				"path": "./language-grammar/ct-rust-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-php",
+				"scopeName": "ct-source.php",
+				"path": "./language-grammar/ct-php-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-c",
+				"scopeName": "ct-source.c",
+				"path": "./language-grammar/ct-c-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-cpp",
+				"scopeName": "ct-source.cpp",
+				"path": "./language-grammar/ct-cpp-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-json",
+				"scopeName": "ct-source.json",
+				"path": "./language-grammar/ct-json-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-kotlin",
+				"scopeName": "ct-source.Kotlin",
+				"path": "./language-grammar/ct-kotlin-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-vue",
+				"scopeName": "ct-source.vue",
+				"path": "./language-grammar/ct-vue-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-scala",
+				"scopeName": "ct-source.scala",
+				"path": "./language-grammar/ct-scala-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-twig",
+				"scopeName": "ct-text.html.twig",
+				"path": "./language-grammar/ct-twig-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-Cobol",
+				"scopeName": "ct-source.cobol",
+				"path": "./language-grammar/ct-Cobol-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-elixir",
+				"scopeName": "ct-source.elixir",
+				"path": "./language-grammar/ct-elixir-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-dart",
+				"scopeName": "ct-source.dart",
+				"path": "./language-grammar/ct-dart-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-yaml",
+				"scopeName": "ct-source.yaml",
+				"path": "./language-grammar/ct-yaml-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-diff",
+				"scopeName": "ct-source.diff",
+				"path": "./language-grammar/ct-diff-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-docker",
+				"scopeName": "ct-source.dockerfile",
+				"path": "./language-grammar/ct-docker-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-objective-cpp",
+				"scopeName": "ct-source.objcpp",
+				"path": "./language-grammar/ct-objective-cpp-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-ruby",
+				"scopeName": "ct-source.ruby",
+				"path": "./language-grammar/ct-ruby-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-abap",
+				"scopeName": "ct-source.abap",
+				"path": "./language-grammar/ct-abap-0.plist"
+			},
+			{
+				"language": "ct-latex",
+				"scopeName": "ct-text.tex",
+				"path": "./language-grammar/ct-latex-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-bibtex",
+				"scopeName": "ct-text.bibtex",
+				"path": "./language-grammar/ct-bibtex-0.tmLanguage.json"
+			},
+			{
+				"language": "ct-abl",
+				"scopeName": "ct-source.abl",
+				"path": "./language-grammar/ct-abl-0.tmLanguage.json"
+			}
+		]
+	},
+	"semanticTokenScopes": [
+		{
+			"language": "ct-javascript",
+			"scopes": {
+				"property": [
+					"variable.other.property.js"
+				],
+				"property.readonly": [
+					"variable.other.constant.property.js"
+				],
+				"variable": [
+					"variable.other.readwrite.js"
+				],
+				"variable.readonly": [
+					"variable.other.constant.object.js"
+				],
+				"function": [
+					"entity.name.function.js"
+				],
+				"namespace": [
+					"entity.name.type.module.js"
+				],
+				"variable.defaultLibrary": [
+					"support.variable.js"
+				],
+				"function.defaultLibrary": [
+					"support.function.js"
+				]
+			}
+		},
+		{
+			"language": "ct-javascriptreact",
+			"scopes": {
+				"property": [
+					"variable.other.property.jsx"
+				],
+				"property.readonly": [
+					"variable.other.constant.property.jsx"
+				],
+				"variable": [
+					"variable.other.readwrite.jsx"
+				],
+				"variable.readonly": [
+					"variable.other.constant.object.jsx"
+				],
+				"function": [
+					"entity.name.function.jsx"
+				],
+				"namespace": [
+					"entity.name.type.module.jsx"
+				],
+				"variable.defaultLibrary": [
+					"support.variable.js"
+				],
+				"function.defaultLibrary": [
+					"support.function.js"
+				]
+			}
+		}
+	],
+	"scripts": {
+		"vscode:prepublish": "node scripts/changelog.js && webpack --mode production",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile",
+		"test": "node ./out/test/runTest.js",
+		"lint": "eslint --resolve-plugins-relative-to . -c .eslintrc.js --ext .ts src",
+		"package": "./node_modules/.bin/vsce package --yarn --out codetogether-2024.3.1.vsix",
+		"build:webview": "cd src/views/presence-webview && yarn && yarn build",
+		"build:auth-webview": "cd src/views/auth-webview-panel-source && yarn && yarn build"
+	},
+	"devDependencies": {
+		"@types/body-parser": "^1.17.0",
+		"@types/cors": "^2.8.10",
+		"@types/drivelist": "^6.4.1",
+		"@types/express": "4.17.2",
+		"@types/fs-extra": "^4.0.2",
+		"@types/glob": "^7.1.1",
+		"@types/lodash.debounce": "4.0.3",
+		"@types/lodash.throttle": "^4.1.6",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/node-rsa": "^1.0.0",
+		"@types/rimraf": "^2.0.2",
+		"@types/route-parser": "^0.1.1",
+		"@types/tar-fs": "^2.0.4",
+		"@types/touch": "0.0.1",
+		"@types/underscore": "1.11.3",
+		"@types/uuid": "^3.4.3",
+		"@types/ws": "^7.4.0",
+		"@typescript-eslint/eslint-plugin": "^4.15.0",
+		"@typescript-eslint/eslint-plugin-tslint": "^4.15.0",
+		"@typescript-eslint/parser": "^4.15.0",
+		"aws-sdk": "^2.749.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"eslint": "^7.20.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsdoc": "^31.6.1",
+		"eslint-plugin-no-null": "^1.0.2",
+		"eslint-plugin-vue": "^7.5.0",
+		"glob": "^7.1.5",
+		"ignore": "^5.1.8",
+		"mocha": "^6.2.2",
+		"ts-loader": "^8.4.0",
+		"typescript": "^4.7.4",
+		"vsce": "^1.73.0",
+		"vscode-test": "^1.2.2",
+		"webpack": "^4.41.6",
+		"webpack-cli": "4.10.0"
+	},
+	"dependencies": {
+		"axios": "0.27.2",
+		"body-parser": "^1.18.3",
+		"bufferutil": "^4.0.1",
+		"comment-json": "^4.1.0",
+		"cors": "^2.8.5",
+		"execa": "^5.0.0",
+		"express": "^4.17.1",
+		"fs-extra": "^4.0.2",
+		"http-proxy-agent": "^4.0.1",
+		"http-status-codes": "^1.3.0",
+		"https-proxy-agent": "^5.0.0",
+		"iconv-lite": "0.4.23",
+		"inversify": "^5.0.1",
+		"java-props": "^2.1.3",
+		"jschardet": "1.6.0",
+		"lodash.debounce": "^4.0.8",
+		"lodash.throttle": "^4.1.1",
+		"markdown-to-txt": "^1.0.1",
+		"minimatch": "^3.0.5",
+		"mv": "^2.1.1",
+		"node-rsa": "^1.1.1",
+		"open": "^7.4.2",
+		"properties-store": "0.3.0",
+		"reconnecting-websocket": "^4.4.0",
+		"reflect-metadata": "^0.1.10",
+		"rimraf": "^2.6.2",
+		"route-parser": "^0.0.5",
+		"socks-proxy-agent": "^5.0.0",
+		"tar-fs": "^3.0.4",
+		"ts-md5": "^1.3.1",
+		"touch": "^3.1.0",
+		"underscore": "1.12.1",
+		"utf-8-validate": "^5.0.2",
+		"uuid": "^3.2.1",
+		"vscode-debugprotocol": "^1.48.0",
+		"vscode-jsonrpc": "^5.0.0",
+		"vscode-languageclient": "^6.1.3",
+		"vscode-languageserver": "^6.1.0",
+		"vscode-languageserver-protocol": "^3.15.2",
+		"vscode-uri": "^1.0.8",
+		"vscode-ws-jsonrpc": "^0.2.0",
+		"ws": "^7.4.6",
+		"zip-dir": "^1.0.2"
+	},
+	"resolutions": {
+		"**/elliptic": "6.5.4",
+		"**/markdown-it": "10.0.0",
+		"**/ssri": "8.0.1",
+		"**/underscore": "1.12.1",
+		"**/jszip": "3.8.0",
+		"**/ansi-regex": "5.0.1",
+		"**/set-value": "4.0.1",
+		"**/unset-value": "2.0.1",
+		"**/follow-redirects": "^1.14.7",
+		"**/ini": "^1.3.6",
+		"**/marked": "^0.7.0",
+		"**/minimist": "^1.2.6",
+		"**/moment": "^2.29.4",
+		"**/qs": "^6.7.3",
+		"**/minimatch": "^3.0.5",
+		"**/debug": "^4.3.1",
+		"**/moment-timezone": "^0.5.35",
+		"**/semver": "^6.3.1"
+	},
+	"__metadata": {
+		"id": "406af941-64c7-49b5-8091-d579dc77a913",
+		"publisherId": "3628eba9-69e3-47bc-a68d-b09b153ac1d5",
+		"publisherDisplayName": "Genuitec",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1721981633730,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

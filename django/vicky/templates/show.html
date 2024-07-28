@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+</head>
+<body>
+ 
+<table border="2">
+    <tr>
+        <th>icon</th>
+        <th>title</th>
+        <th>descrption</th>
+
+    </tr>
+    {% for i in servicedata %}
+    <tr>
+        <td>{{ i.service_icon }}</td>
+        <td>{{ i.service_title }}</td>
+        <td>{{ i.service_des }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    
+</body>
+</html>

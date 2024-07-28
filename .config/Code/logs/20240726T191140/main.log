@@ -1,0 +1,11 @@
+2024-07-26 19:11:40.356 [info] update#setState idle
+2024-07-26 19:11:41.786 [error] update#isLatestVersion(): failed to check for updates
+2024-07-26 19:11:41.786 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:108522)
+    at SimpleURLLoaderWrapper.emit (node:events:517:28)
+2024-07-26 19:11:53.435 [warning] [UtilityProcessWorker]: createWorker() found an existing worker that will be terminated (window: 1, moduleId: vs/platform/files/node/watcher/watcherMain)
+2024-07-26 19:12:10.359 [info] update#setState checking for updates
+2024-07-26 19:12:10.364 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:108522)
+    at SimpleURLLoaderWrapper.emit (node:events:517:28)
+2024-07-26 19:12:10.364 [info] update#setState idle

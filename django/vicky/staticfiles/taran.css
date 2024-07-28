@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    
+    justify-content: center;
+    background-image: url('https://media.istockphoto.com/id/1493959975/photo/young-man-working-out-with-battle-ropes-in-gym.jpg?s=2048x2048&w=is&k=20&c=ZtKRWepS7cJNPuW-Q2ssxpqq-W6_j1JniTTt8OJhmcg=');
+    
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Messages */
+ul.messages {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+ul.messages li.error {
+    background-color: #ffdddd;
+    color: #d8000c;
+}
+
+ul.messages li.success {
+    background-color: #ddffdd;
+    color: #4f8a10;
+}
+
+ul.messages li.warning {
+    background-color: #ffffdd;
+    color: #9f6000;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: whitesmoke;
+}
+
+.form-control {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form-check-label {
+    font-weight: bold;
+    color: #f4f1f1;
+}
+background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3; /* Adjust opacity as needed */
+    z-index: -1;
+}
+
+
+.form-check-input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+div.mb-3 {
+    margin-bottom: 1rem;
+}
+
+div.mb-3:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Additional Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+p {
+    margin: 0;
+}
+
+p a {
+    font-weight: bold;
+}

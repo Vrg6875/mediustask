@@ -1,0 +1,6 @@
+2024/07/27-16:09:29.496 4 Reusing MANIFEST /home/vicky/.config/google-chrome/Default/Local Storage/leveldb/MANIFEST-000001
+2024/07/27-16:09:29.501 4 Recovering log #507
+2024/07/27-16:09:29.503 4 Reusing old log /home/vicky/.config/google-chrome/Default/Local Storage/leveldb/000507.log 
+2024/07/27-16:11:31.179 4 Level-0 table #511: started
+2024/07/27-16:11:31.194 4 Level-0 table #511: 75351 bytes OK
+2024/07/27-16:11:31.203 4 Delete type=0 #507

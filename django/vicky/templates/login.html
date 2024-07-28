@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'taranpreet.css' %}">
+<form method="post">
+  {% csrf_token %}
+  <h1>Log in</h1>
+<div>
+<label class="form-check-label" for="exampleCheck1">username</label>
+<input type="text" class="form-check-input" id="exampleCheck1">
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <div>
+    <p>dont  have a account plese create <a href="/register/">signup</a></p>
+
+</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 

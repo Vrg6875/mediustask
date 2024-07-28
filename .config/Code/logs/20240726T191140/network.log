@@ -1,0 +1,11 @@
+2024-07-26 19:11:41.515 [error] electron #1: https://az764295.vo.msecnd.net/extensions/marketplace.json - error GET net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:11:41.786 [error] electron #2: https://update.code.visualstudio.com/api/update/linux-x64/stable/dc96b837cf6bb4af9cd736aa3af08cf8279f7685 - error undefined net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:11:43.561 [error] electron #3: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:11:45.648 [error] electron #4: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:11:46.321 [error] electron #5: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:11:48.429 [error] electron #6: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:12:00.260 [error] electron #7: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:12:03.599 [error] electron #8: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:12:10.363 [error] electron #9: https://update.code.visualstudio.com/api/update/linux-x64/stable/dc96b837cf6bb4af9cd736aa3af08cf8279f7685 - error undefined net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:12:31.062 [error] electron #10: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED
+2024-07-26 19:12:33.905 [error] electron #11: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED

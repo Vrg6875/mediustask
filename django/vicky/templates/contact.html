@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form</title>
+</head>
+<body>
+
+<h1>contactdetails</h1>
+
+<form method="post" action="{% url 'saveenquiry' %}">
+
+
+    {% csrf_token %}
+    <h1>
+    <div>
+        <label>name</label>
+        <input type="text" name="name" >
+    </div>   
+    <br>
+    <div>
+        <label>phone</label>
+        <input type="text" name="phone" >
+    </div>   
+    <br>
+      
+    <br>
+    <div>
+        <label>message</label>
+        <input type="text" name="message">
+    </div>   
+  
+    <br>  
+    <div>
+       
+        <button type="submit">sumit now</button>
+    </div>   
+    <br>
+    
+</form>
+
+
+
+</body>
+</html>

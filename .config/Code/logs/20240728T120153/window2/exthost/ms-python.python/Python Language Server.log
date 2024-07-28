@@ -1,0 +1,29 @@
+2024-07-28 12:26:13.314 [info] (Client) Pylance async client (2024.7.1) started with python extension (2024.10.0)
+2024-07-28 12:26:13.879 [info] [Info  - 12:26:13] (13038) Pylance language server 2024.7.1 (pyright version 1.1.369, commit 1168be71) starting
+2024-07-28 12:26:13.879 [info] [Info  - 12:26:13] (13038) Server root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-28 12:26:13.885 [info] [Info  - 12:26:13] (13038) Starting service instance "vicky"
+2024-07-28 12:26:13.930 [info] [Info  - 12:26:13] (13038) Setting pythonPath for service "vicky": "/home/vicky/Desktop/eventplanner/vicky/venv/bin/python"
+2024-07-28 12:26:13.930 [info] [Info  - 12:26:13] (13038) Setting environmentName for service "vicky": "3.10.12 (venv venv)"
+2024-07-28 12:26:13.931 [info] [Info  - 12:26:13] (13038) No include entries specified; assuming /home/vicky/Desktop/eventplanner/vicky
+2024-07-28 12:26:13.932 [info] [Info  - 12:26:13] (13038) Auto-excluding **/node_modules
+2024-07-28 12:26:13.932 [info] [Info  - 12:26:13] (13038) Auto-excluding **/__pycache__
+2024-07-28 12:26:13.933 [info] [Info  - 12:26:13] (13038) Auto-excluding **/.*
+2024-07-28 12:26:13.967 [info] [Info  - 12:26:13] (13038) Assuming Python version 3.10.12.final.0
+2024-07-28 12:26:14.050 [info] [Info  - 12:26:14] (13038) Auto-excluding /home/vicky/Desktop/eventplanner/vicky/venv
+2024-07-28 12:26:14.058 [info] [Info  - 12:26:14] (13038) Found 23 source files
+2024-07-28 12:26:14.376 [info] [Info  - 12:26:14] (13038) Background analysis(1) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-28 12:26:14.381 [info] [Info  - 12:26:14] (13038) Background analysis(1) started
+2024-07-28 12:26:24.750 [info] [Info  - 12:26:24] (13038) Setting pythonPath for service "vicky": "/home/vicky/Desktop/eventplanner/vicky/venv/bin/python"
+2024-07-28 12:26:24.750 [info] [Info  - 12:26:24] (13038) Setting environmentName for service "vicky": "3.10.12 (venv venv)"
+2024-07-28 12:26:24.750 [info] [Info  - 12:26:24] (13038) No include entries specified; assuming /home/vicky/Desktop/eventplanner/vicky
+2024-07-28 12:26:24.751 [info] [Info  - 12:26:24] (13038) Auto-excluding **/node_modules
+2024-07-28 12:26:24.751 [info] [Info  - 12:26:24] (13038) Auto-excluding **/__pycache__
+2024-07-28 12:26:24.752 [info] [Info  - 12:26:24] (13038) Auto-excluding **/.*
+2024-07-28 12:26:24.782 [info] [Info  - 12:26:24] (13038) Assuming Python version 3.10.12.final.0
+2024-07-28 12:26:24.864 [info] [Info  - 12:26:24] (13038) Auto-excluding /home/vicky/Desktop/eventplanner/vicky/venv
+2024-07-28 12:26:24.868 [info] [Info  - 12:26:24] (13038) Found 23 source files
+2024-07-28 12:26:46.176 [info] [Info  - 12:26:46] (13038) Indexer background runner(2) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (index)
+2024-07-28 12:26:46.176 [info] [Info  - 12:26:46] (13038) Indexing(2) started
+2024-07-28 12:26:46.635 [info] [Info  - 12:26:46] (13038) scanned(2) 10 files over 1 exec env
+2024-07-28 12:26:46.842 [info] [Info  - 12:26:46] (13038) indexed(2) 2 files over 1 exec env
+2024-07-28 12:26:46.857 [info] [Info  - 12:26:46] (13038) Indexing finished(2).

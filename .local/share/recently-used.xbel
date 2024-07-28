@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///" added="2024-07-22T17:00:14.549295Z" modified="2024-07-28T06:31:56.031663Z" visited="2024-07-22T17:00:14.549295Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:groups>
+          <bookmark:group>baobab</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="baobab" exec="&apos;baobab %u&apos;" modified="2024-07-28T06:31:56.031661Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vicky/gitvrg" added="2024-07-22T17:48:44.750573Z" modified="2024-07-22T17:48:44.750587Z" visited="2024-07-22T17:48:44.750575Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.gnome.Nautilus" exec="&apos;org.gnome.Nautilus %u&apos;" modified="2024-07-22T17:48:44.750580Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vicky/Desktop" added="2024-07-26T12:09:06.584791Z" modified="2024-07-26T12:09:06.584794Z" visited="2024-07-26T12:09:06.584792Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="gjs" exec="&apos;gjs %u&apos;" modified="2024-07-26T12:09:06.584793Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vicky/Desktop/django%20rest-framework.zip" added="2024-07-26T12:09:25.544752Z" modified="2024-07-26T12:09:25.544756Z" visited="2024-07-26T12:09:25.544752Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2024-07-26T12:09:25.544753Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vicky/Downloads/weather.zip" added="2024-07-26T12:11:10.579662Z" modified="2024-07-26T12:11:10.612329Z" visited="2024-07-26T12:11:10.579665Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gnome" exec="&apos;xdg-desktop-portal-gnome %u&apos;" modified="2024-07-26T12:11:10.612326Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vicky/vicky_raj_gupta.pdf-2.pdf" added="2024-07-28T06:35:14.301878Z" modified="2024-07-28T06:35:14.301882Z" visited="2024-07-28T06:35:14.301879Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2024-07-28T06:35:14.301880Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

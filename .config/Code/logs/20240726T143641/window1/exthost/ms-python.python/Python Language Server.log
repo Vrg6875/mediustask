@@ -1,0 +1,20 @@
+2024-07-26 14:37:13.632 [info] (Client) Pylance async client (2024.7.1) started with python extension (2024.10.0)
+2024-07-26 14:37:14.183 [info] [Info  - 14:37:14] (31967) Pylance language server 2024.7.1 (pyright version 1.1.369, commit 1168be71) starting
+2024-07-26 14:37:14.183 [info] [Info  - 14:37:14] (31967) Server root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-26 14:37:14.186 [info] [Info  - 14:37:14] (31967) Starting service instance "eventplanner"
+2024-07-26 14:37:14.225 [info] [Info  - 14:37:14] (31967) Setting pythonPath for service "eventplanner": "/home/vicky/Desktop/eventplanner/vicky/venv/bin/python"
+2024-07-26 14:37:14.226 [info] [Info  - 14:37:14] (31967) Setting environmentName for service "eventplanner": "3.10.12 (venv venv)"
+2024-07-26 14:37:14.226 [info] [Info  - 14:37:14] (31967) No include entries specified; assuming /home/vicky/Desktop/eventplanner
+2024-07-26 14:37:14.227 [info] [Info  - 14:37:14] (31967) Auto-excluding **/node_modules
+2024-07-26 14:37:14.227 [info] [Info  - 14:37:14] (31967) Auto-excluding **/__pycache__
+2024-07-26 14:37:14.227 [info] [Info  - 14:37:14] (31967) Auto-excluding **/.*
+2024-07-26 14:37:14.249 [info] [Info  - 14:37:14] (31967) Assuming Python version 3.10.12.final.0
+2024-07-26 14:37:14.318 [info] [Info  - 14:37:14] (31967) Auto-excluding /home/vicky/Desktop/eventplanner/vicky/venv
+2024-07-26 14:37:14.327 [info] [Info  - 14:37:14] (31967) Found 23 source files
+2024-07-26 14:37:14.753 [info] [Info  - 14:37:14] (31967) Background analysis(1) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist
+2024-07-26 14:37:14.755 [info] [Info  - 14:37:14] (31967) Background analysis(1) started
+2024-07-26 14:37:14.955 [info] [Info  - 14:37:14] (31967) Indexer background runner(2) root directory: file:///home/vicky/.vscode/extensions/ms-python.vscode-pylance-2024.7.1/dist (index)
+2024-07-26 14:37:14.955 [info] [Info  - 14:37:14] (31967) Indexing(2) started
+2024-07-26 14:37:15.371 [info] [Info  - 14:37:15] (31967) scanned(2) 10 files over 1 exec env
+2024-07-26 14:37:15.577 [info] [Info  - 14:37:15] (31967) indexed(2) 2 files over 1 exec env
+2024-07-26 14:37:15.592 [info] [Info  - 14:37:15] (31967) Indexing finished(2).
