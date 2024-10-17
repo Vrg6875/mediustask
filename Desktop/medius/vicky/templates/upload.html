@@ -7,15 +7,28 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+
     
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('file');
+            const fileNameDisplay = document.getElementById('file-name');
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : 'No file chosen';
+            fileNameDisplay.textContent = fileName;
+        }
+    </script>
 </head>
 <body>
-    <h1>Vicky assignment</h1>
-    <h2>Upload Excel/CSV File</h2>
+    <h1>Vicky Assignment</h1>
+  
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label for="file">Upload Excel/CSV File</label>
+        <input type="file" name="file" id="file" onchange="displayFileName()">
+        <p>Selected File: <span id="file-name">No file chosen</span></p> 
         <button type="submit">Upload</button>
     </form>
+
+  
 </body>
 </html>
